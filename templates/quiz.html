@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script>
+    let data = {{data|tojson}} 
+    let next = {{next|tojson}}
+</script>
+
+{% if next == 1 or next == 7%}
+
+<div id="quiz_header">
+    {{data.text}}
+</div>
+
+{% else %}
+
+<div id="quiz_header">
+    Question {{data.id}}
+</div>
+
+<div>
+   {{data.text}}
+</div>
+{% endif %}
+
+{% for image in data.images %}
+<div>
+    <img src="{{image.image}}" width=30% height="auto">
+    {{image.description}}
+</div>
+{% endfor %}
+
+
+{% if next == 7 %}
+    <a href="/" class="btn btn-secondary">Home</a>
+    <a href="/learn/0" class="btn btn-secondary">Redo lesson</a>
+    <a href="/quiz/0" class="btn btn-secondary">Redo quiz</a>    
+{% else %}
+    <a href="/quiz/{{next}}" class="btn btn-primary">Next question</a>
+{% endif %}
+
+{% endblock %}
