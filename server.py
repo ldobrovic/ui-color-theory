@@ -4,6 +4,7 @@ from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
 app = Flask(__name__)
+import sys
 
 
 lessons = [
@@ -251,6 +252,9 @@ def render_quiz(id):
         this_question.append(questions[0])
 
     return render_template("quiz.html", data = this_question[0], next = int(this_question[0]["id"]) + 1)
+
+if __name__ == '__main__':
+   app.run(debug = True)
 
 
 
