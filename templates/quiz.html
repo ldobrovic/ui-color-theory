@@ -13,11 +13,14 @@
 {% if next == 1 or next == 7%}
 <div class="col">
     <div class=" quiz-header text-center my-4" >
-            <!-- {{data.text}} -->
-            Put your knowledge to test!
+            {{data.text}}
     </div>
     <div class="quiz-buttons text-center ">
+        {% if next == 7%}
+        <a href="/quiz/{{next}}" class="btn btn-primary">Redo Quiz</a>
+        {%else%}
         <a href="/quiz/{{next}}" class="btn btn-primary">Start Quiz</a>
+        {%endif%}
         <a href="/" class="btn btn-secondary">Home </a>
 
     </div>
@@ -36,19 +39,21 @@
         </div>
         
        
-        {% if next>2 %}
-            {% for image in data.images %}
-            <div>
-                <img src="{{image.image}}" width=30% height="auto">
-                {{image.description}}
-            </div>
-            {% endfor %}
-        {%else%}
+       
         <div class="row" id="color-grid">
+         
+            
             
 
         </div>
+        {% if next>2 %}
+         <div class="row mt-4 " id="drop-grid">
+             
+
+         </div>
         {%endif%}
+       
+      
 
         <div class="row quiz-buttons my-3">
 

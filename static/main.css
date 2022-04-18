@@ -52,3 +52,37 @@
     font-size: large;
     font-weight: bold;
 }
+.height-100{
+    height: 100px;
+}
+.height-150{
+    height: 150px;
+}
+
+.ui-draggable-dragging{
+    z-index: 999999;
+   
+}
+.draggable:hover{
+    cursor: grab;
+
+}
+.droppable{
+    background-color: lightgray;
+}
+.ui-droppable-active{
+    background-color:gray !important;
+}
+.ui-droppable-hover{
+       background-color: #gray !important; 
+}
+
+#accesory, #bottom {
+    min-height: 150px;
+    height:fit-content;
+}
+#top {
+    min-height: 120px;
+    height:fit-content;
+
+}

@@ -7,9 +7,26 @@ import sys
 
 user_answers = {
     "question1":{
+        'overall': 0, #0 indicates wrong, 1 indicates correct
+        'answers': [],
+    },
+     "question2":{
         'overall': 0,
         'answers': [],
     },
+     "question3":{
+        'overall': 0,
+        'answers': [],
+    },
+     "question4":{
+        'overall': 0,
+        'answers': [],
+    },
+     "question5":{
+        'overall': 0,
+        'answers': [],
+    },
+
 }
 
 lessons = [
@@ -126,7 +143,7 @@ lessons = [
 questions = [
     {
         "id": "0",
-        "text": "Answer each question",
+        "text": "Put your knowledge to test!",
         "images": [],
     },
     {
@@ -158,59 +175,86 @@ questions = [
         "id": "3",
         "text": "Build an outfit with mainly neutrals and at most one color",
         "images": [
-            {
-                "description": "red",
-                "image": "/static/images/q3red.png",
-            },
-            {
-                "description": "green",
-                "image": "/static/images/q3green.png",
-            },
-            {
-                "description": "black",
-                "image": "/static/images/q3black.png",
-            },
+           
             {
                 "description": "white",
                 "image": "/static/images/q3white.png",
+                "type": "accesory"
             },
-            {
-                "description": "purple",
-                "image": "/static/images/q3purple.png",
+             {
+                "description": "green",
+                "image": "/static/images/q3green.png",
+                "type": "top"
             },
+           
             {
                 "description": "beige",
                 "image": "/static/images/q3beige.png",
+                "type": "top"
+            },
+             {
+                "description": "red",
+                "image": "/static/images/q3red.png",
+                "type": "accesory"
+            },
+             {
+                "description": "purple",
+                "image": "/static/images/q3purple.png",
+                "type": "bottom"
+            },
+           
+            {
+                "description": "black",
+                "image": "/static/images/q3black.png",
+                "type": "bottom"
             },
         ],
+        "answer": [
+            # these are the wrong colors
+            "red",
+            "purple",
+            "green"
+        ]
     },
     {
         "id": "4",
         "text": "Build an outfit with one neutral and an analogous color pair",
+        "answer":[
+            ["red","orange"],
+            ["navy", "purple"],
+        ],
         "images": [
             {
                 "description": "red",
                 "image": "/static/images/q4red.png",
+                 "type": "accesory"
             },
-            {
-                "description": "beige",
-                "image": "/static/images/q4beige.png",
-            },
-            {
-                "description": "black",
-                "image": "/static/images/q4black.png",
-            },
+          
+           
             {
                 "description": "orange",
                 "image": "/static/images/q4orange.png",
+                "type": "top"
             },
             {
                 "description": "purple",
                 "image": "/static/images/q4purple.png",
+                "type": "top"
+            },
+              {
+                "description": "beige",
+                "image": "/static/images/q4beige.png",
+                "type": "accesory"
             },
             {
                 "description": "navy",
                 "image": "/static/images/q4navy.png",
+                "type": "bottom"
+            },
+             {
+                "description": "black",
+                "image": "/static/images/q4black.png",
+                "type": "bottom"
             },
         ],
     },
@@ -240,6 +284,7 @@ questions = [
         "id": "6",
         "text": "Well done!",
         "images": [],
+        "answer" : user_answers
     },
 ]
 
