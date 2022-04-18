@@ -1,0 +1,73 @@
+.welcome_header1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+  font-family: "Trebuchet MS";
+  margin-top: 60px;
+  margin-bottom: 15px;
+  color: black;
+}
+.text-font {
+  font-family: "Trebuchet MS";
+}
+#learn_header {
+  padding-left: 280px;
+}
+.start_center {
+  padding-left: 530px;
+}
+.container1 {
+  height: 250px;
+  width: auto;
+  background-color: white;
+}
+.img_padding {
+  padding-top: 15px;
+  padding-right: 55px;
+  padding-left: 30px;
+}
+.img_wrap {
+  position: relative;
+  height: 370px;
+  width: 330px;
+}
+
+.img_description {
+  position: absolute;
+  top: 10;
+  bottom: 0;
+  left: -10;
+  right: 0;
+  background: rgba(213, 224, 231, 0.72);
+  color: brown;
+  visibility: hidden;
+  opacity: 0;
+
+  /* transition effect. not necessary */
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.img_wrap:hover .img_description {
+  visibility: visible;
+  opacity: 1;
+}
+
+.prev_margin {
+  margin-right: 780px;
+}
+.quiz_margin {
+  margin-right: 20px;
+}
+.welcome_center {
+  padding-left: 450px;
+}
+.disinlineblck {
+  display: inline-block;
+}
+.big_bold {
+  font-size: 18;
+  font-weight: bold;
+}
+.img_center {
+  padding-left: 100px;
+}

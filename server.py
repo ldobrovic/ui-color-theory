@@ -10,14 +10,14 @@ import sys
 lessons = [
     {
         "id": "0",
-        "text": "Advance through the slides, hover over the images to learn more",
+        "text": "Advance through the slides to learn principles. Hover over the images to learn more!",
     },
     {
         "id": "1",
         "text": "Neutral colors like black, white, and grey make life easy!",
         "examples": [
             {
-                "description": "YSL Le Smoking",
+                "description": "YSL Le Smoking.\n\nThe neutrals black and white make for a timeless, elegant combo.\n About: Yves Saint-Laurent’s “Le Smoking” tuxedo broke ground as the first suit for women in 1966 and still makes waves today",
                 "image": "/static/p1ysl.jpg",
             },
             {
@@ -28,7 +28,8 @@ lessons = [
                 "description": "Matila Djerf",
                 "image": "/static/p1matilda.png",
             }
-        ]
+        ],
+        
     },
     {
         "id": "2",
@@ -46,7 +47,7 @@ lessons = [
                 "description": "Navy",
                 "image": "/static/p2navy.png",
             }
-        ]
+        ],
     },
     {
         "id": "3",
@@ -60,7 +61,7 @@ lessons = [
                 "description": "sample women's",
                 "image": "/static/p3women.png",
             },
-        ]
+        ],
     },
     {
         "id": "4",
@@ -78,7 +79,7 @@ lessons = [
                 "description": "Alexa Chung",
                 "image": "/static/p4alexa.png",
             }
-        ]
+        ],
     },
     {
         "id": "5",
@@ -96,7 +97,7 @@ lessons = [
                 "description": "Yellow",
                 "image": "/static/p5yellow.jpeg",
             }
-        ]
+        ],
     },
     {
         "id": "6",
@@ -114,7 +115,7 @@ lessons = [
                 "description": "Zendaya",
                 "image": "/static/p6zendaya.png",
             }
-        ]
+        ],
     },
 ]
 
@@ -238,8 +239,8 @@ def render_learn(id):
 
     if len(this_lesson) == 0:
         this_lesson.append(lessons[0])
-
-    return render_template("learn.html", data = this_lesson[0], next = int(this_lesson[0]["id"]) + 1)
+   
+    return render_template("learn.html", data = this_lesson[0],next = int(this_lesson[0]["id"]) + 1,  before = int(this_lesson[0]["id"])-1)
 
 
 @app.route('/quiz/<id>')
