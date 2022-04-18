@@ -15,6 +15,12 @@
     <div class=" quiz-header text-center my-4" >
             {{data.text}}
     </div>
+    {% if next == 7%}
+    <div class=" quiz-header text-center my-4" id="overall" >
+      
+    </div>
+       
+    {%endif%}
     <div class="quiz-buttons text-center ">
         {% if next == 7%}
         <a href="/quiz/{{next}}" class="btn btn-primary">Redo Quiz</a>

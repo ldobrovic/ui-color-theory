@@ -1,6 +1,6 @@
 :root {
     /* color wheel colors */
-    --one: #fffa00;
+    --one: #fffa00; 
     --two: #ffcd00;
     --three: #ffa100;
     --four: #ff7300;
@@ -9,7 +9,7 @@
     --seven: #980ec2;
     --eight: #0025c2;
     --nine: #007bcc;
-    --ten: #00b6d8;
+    --ten: #00b6d8; 
     --eleven: #00ba00;
     --twelve: #68d000;
     /* neutral colors  */
@@ -74,7 +74,7 @@
     background-color:gray !important;
 }
 .ui-droppable-hover{
-       background-color: #gray !important; 
+       background-color: gray !important; 
 }
 
 #accesory, #bottom {

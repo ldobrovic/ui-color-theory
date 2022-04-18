@@ -168,8 +168,21 @@ questions = [
     },
     {
         "id": "2",
-        "text": "Identify the analogous color pairs",
-        "images": [],
+        "text": "Identify at least one analogous color pair",
+        "images": [
+            "#00ba00",
+            "#ff0000",
+            "black",
+            "#ffa100",
+            "#00b6d8",
+            "#fffa00",
+            "#0025c2",
+            "#980ec2", #navy
+        ],
+         "answer":[
+            ["#00ba00","#00b6d8"],
+            ["#0025c2", "#980ec2"],
+        ],
     },
     {
         "id": "3",
@@ -317,6 +330,23 @@ def render_quiz(id):
         this_question.append(questions[0])
 
     return render_template("quiz.html", data = this_question[0], next = int(this_question[0]["id"]) + 1)
+
+@app.route('/quiz/save_answers', methods=['POST'])
+def save_answers():
+    global user_answers 
+
+    json_data = request.get_json()   
+    id = json_data["id"] 
+    overall = json_data["overall"] 
+    answers = json_data["answers"]
+   
+    answer = {
+       "overall": overall,
+       "answers": answers,
+    }
+    user_answers[id] = answer
+
+    return jsonify(user_answers=user_answers)
 
 if __name__ == '__main__':
    app.run(debug = True)
