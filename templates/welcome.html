@@ -1,16 +1,13 @@
-{% extends "layout.html" %}
+{% extends "layout.html" %} {% block content %}
 
-{% block content %}
-
-<div id="welcome_header">
-    Welcome to our site
+<div id="welcome_header" class="welcome_header1">
+  Welcome! Learn The Basics of Color Theory for Style.
+  <div>Never go out of style with these principles.</div>
 </div>
 
-<div>
-    <a href="/learn/0" class="btn btn-primary">Learn</a>
-    <a href="/quiz/0" class="btn btn-secondary">Quiz</a>
+<div class="welcome_center">
+  <a href="/learn/0" class="btn btn-primary text-font">Teach Me</a>
+  <a href="/quiz/0" class="btn btn-secondary text-font">Test Me</a>
 </div>
 
 {% endblock %}
-
-
