@@ -1,11 +1,16 @@
 from dataclasses import dataclass
-from socketserver import ThreadingUnixStreamServer
 from flask import Flask
 from flask import render_template
 from flask import Response, request, jsonify
 app = Flask(__name__)
 import sys
 
+user_answers = {
+    "question1":{
+        'overall': 0,
+        'answers': [],
+    },
+}
 
 lessons = [
     {
@@ -18,15 +23,15 @@ lessons = [
         "examples": [
             {
                 "description": "YSL Le Smoking",
-                "image": "/static/p1ysl.jpg",
+                "image": "/static/images/p1ysl.jpg",
             },
             {
                 "description": "That dress",
-                "image": "/static/p1dress.jpg",
+                "image": "/static/images/p1dress.jpg",
             },
             {
                 "description": "Matila Djerf",
-                "image": "/static/p1matilda.png",
+                "image": "/static/images/p1matilda.png",
             }
         ]
     },
@@ -36,15 +41,15 @@ lessons = [
         "examples": [
             {
                 "description": "Phoebe Philo",
-                "image": "/static/p2phoebe.png",
+                "image": "/static/images/p2phoebe.png",
             },
             {
                 "description": "Kanye",
-                "image": "/static/p2kanye.png",
+                "image": "/static/images/p2kanye.png",
             },
             {
                 "description": "Navy",
-                "image": "/static/p2navy.png",
+                "image": "/static/images/p2navy.png",
             }
         ]
     },
@@ -54,11 +59,11 @@ lessons = [
         "examples": [
             {
                 "description": "sample men's",
-                "image": "/static/p3men.png",
+                "image": "/static/images/p3men.png",
             },
             {
                 "description": "sample women's",
-                "image": "/static/p3women.png",
+                "image": "/static/images/p3women.png",
             },
         ]
     },
@@ -68,15 +73,15 @@ lessons = [
         "examples": [
             {
                 "description": "Color wheel",
-                "image": "/static/p4wheel.png",
+                "image": "/static/images/p4wheel.png",
             },
             {
                 "description": "JLo",
-                "image": "/static/p4jlo.png",
+                "image": "/static/images/p4jlo.png",
             },
             {
                 "description": "Alexa Chung",
-                "image": "/static/p4alexa.png",
+                "image": "/static/images/p4alexa.png",
             }
         ]
     },
@@ -86,15 +91,15 @@ lessons = [
         "examples": [
             {
                 "description": "Heels",
-                "image": "/static/p5heels.png",
+                "image": "/static/images/p5heels.png",
             },
             {
                 "description": "Red",
-                "image": "/static/p5red.png",
+                "image": "/static/images/p5red.png",
             },
             {
                 "description": "Yellow",
-                "image": "/static/p5yellow.jpeg",
+                "image": "/static/images/p5yellow.jpeg",
             }
         ]
     },
@@ -104,15 +109,15 @@ lessons = [
         "examples": [
             {
                 "description": "Pink suit",
-                "image": "/static/p6rocky.png",
+                "image": "/static/images/p6rocky.png",
             },
             {
                 "description": "All red",
-                "image": "/static/p6kanye.png",
+                "image": "/static/images/p6kanye.png",
             },
             {
                 "description": "Zendaya",
-                "image": "/static/p6zendaya.png",
+                "image": "/static/images/p6zendaya.png",
             }
         ]
     },
@@ -127,7 +132,22 @@ questions = [
     {
         "id": "1",
         "text": "Identify the neutrals",
-        "images": [],
+        "images": [
+            "black",
+            "#ff00ff",
+            "lightgrey",
+            "#ff9900",
+            "#e1c699", #beige
+            "#01ffff",
+            "#9900ff",
+            "#1c4587", #navy
+        ],
+        "answer": [
+            "black",
+            "lightgrey",
+            "#e1c699",
+            "#1c4587"
+        ]
     },
     {
         "id": "2",
@@ -140,27 +160,27 @@ questions = [
         "images": [
             {
                 "description": "red",
-                "image": "/static/q3red.png",
+                "image": "/static/images/q3red.png",
             },
             {
                 "description": "green",
-                "image": "/static/q3green.png",
+                "image": "/static/images/q3green.png",
             },
             {
                 "description": "black",
-                "image": "/static/q3black.png",
+                "image": "/static/images/q3black.png",
             },
             {
                 "description": "white",
-                "image": "/static/q3white.png",
+                "image": "/static/images/q3white.png",
             },
             {
                 "description": "purple",
-                "image": "/static/q3purple.png",
+                "image": "/static/images/q3purple.png",
             },
             {
                 "description": "beige",
-                "image": "/static/q3beige.png",
+                "image": "/static/images/q3beige.png",
             },
         ],
     },
@@ -170,27 +190,27 @@ questions = [
         "images": [
             {
                 "description": "red",
-                "image": "/static/q4red.png",
+                "image": "/static/images/q4red.png",
             },
             {
                 "description": "beige",
-                "image": "/static/q4beige.png",
+                "image": "/static/images/q4beige.png",
             },
             {
                 "description": "black",
-                "image": "/static/q4black.png",
+                "image": "/static/images/q4black.png",
             },
             {
                 "description": "orange",
-                "image": "/static/q4orange.png",
+                "image": "/static/images/q4orange.png",
             },
             {
                 "description": "purple",
-                "image": "/static/q4purple.png",
+                "image": "/static/images/q4purple.png",
             },
             {
                 "description": "navy",
-                "image": "/static/q4navy.png",
+                "image": "/static/images/q4navy.png",
             },
         ],
     },
@@ -200,19 +220,19 @@ questions = [
         "images": [
                         {
                 "description": "black",
-                "image": "/static/q5black.webp",
+                "image": "/static/images/q5black.webp",
             },
             {
                 "description": "yellow",
-                "image": "/static/q5yellow.jpeg",
+                "image": "/static/images/q5yellow.jpeg",
             },
             {
                 "description": "white",
-                "image": "/static/q5white.png",
+                "image": "/static/images/q5white.png",
             },
             {
                 "description": "pink",
-                "image": "/static/q5pink.png",
+                "image": "/static/images/q5pink.png",
             },
         ],
     },

@@ -1,0 +1,54 @@
+:root {
+    /* color wheel colors */
+    --one: #fffa00;
+    --two: #ffcd00;
+    --three: #ffa100;
+    --four: #ff7300;
+    --five: #ff0000;
+    --six:#ff0096;
+    --seven: #980ec2;
+    --eight: #0025c2;
+    --nine: #007bcc;
+    --ten: #00b6d8;
+    --eleven: #00ba00;
+    --twelve: #68d000;
+    /* neutral colors  */
+    --beige: #e1c699;
+    --navy: #1c4587;
+    /* extra colors */
+    --pink: #ffd6ecff;
+    --fuschia: #cc05fc;
+    --purple: #9900ff;
+    --teal: #01ffff;
+    --orange: #ff9900;
+    --pink: #ff00ff;
+}
+
+.quiz-container {
+    padding: 1em;
+}
+
+.quiz-header{
+    font-size: x-large;
+
+}
+.color-block{
+    min-height: 100px;
+}
+.color-block:hover{
+    opacity:0.8;
+    cursor: grab;
+}
+.block-border {
+    border: 5px solid grey ;
+}
+.correct-border {
+    border: 5px solid rgb(13, 229, 13);
+}
+.wrong-border {
+    border: 5px solid red ;
+}
+.feedback{
+    font-size: large;
+    font-weight: bold;
+}
