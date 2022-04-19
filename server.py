@@ -36,106 +36,88 @@ lessons = [
     },
     {
         "id": "1",
-        "text": "Neutral colors like black, white, and grey make life easy!",
+        "text": "The neutral colors are black, white, grey, navy, beige, brown, and olive green. Neutrals make life easy!",
         "examples": [
             {
-                "description": "YSL Le Smoking.\n\nThe neutrals black and white make for a timeless, elegant combo.\n About: Yves Saint-Laurent’s “Le Smoking” tuxedo broke ground as the first suit for women in 1966 and still makes waves today",
-                "image": "/static/images/p1ysl.jpg",
+                "description": "British designer Phoebe Philo combines the neutrals beige, black, and white into a simple yet put-together look.",
+                "image": "/static/images/p1phoebe.png",
             },
             {
-                "description": "That dress",
-                "image": "/static/images/p1dress.jpg",
+                "description": "Although sometimes seen as a faux-pas, black and navy here create a serious, composed outfit.",
+                "image": "/static/images/p1navy.png",
             },
             {
-                "description": "Matila Djerf",
-                "image": "/static/images/p1matilda.png",
-            }
+                "description": "A seminal figure in the crossover between music and haute couture, Kanye here goes for rich browns, blacks, and olive greens.",
+                "image": "/static/images/p1kanye.png",
+            },
+
         ],
-        
     },
     {
         "id": "2",
-        "text": "The neutrals also include navy, beige, brown, and olive green",
+        "text": "A great wardrobe can be composed entirely of neutrals",
         "examples": [
             {
-                "description": "Phoebe Philo",
-                "image": "/static/images/p2phoebe.png",
+                "description": "A sample men's wardrobe, primarily consisting of black and navy.",
+                "image": "/static/images/p2men.png",
             },
             {
-                "description": "Kanye",
-                "image": "/static/images/p2kanye.png",
+                "description": "A sample women's wardrobe, with more beiges and whites.",
+                "image": "/static/images/p2women.png",
             },
-            {
-                "description": "Navy",
-                "image": "/static/images/p2navy.png",
-            }
         ],
     },
     {
         "id": "3",
-        "text": "A great wardrobe can be composed entirely of neutrals",
-        "examples": [
-            {
-                "description": "sample men's",
-                "image": "/static/images/p3men.png",
-            },
-            {
-                "description": "sample women's",
-                "image": "/static/images/p3women.png",
-            },
-        ],
-    },
-    {
-        "id": "4",
         "text": "On a color wheel, colors next to each other (analogous colors) go well together!",
         "examples": [
             {
                 "description": "Color wheel",
-                "image": "/static/images/p4wheel.png",
+                "image": "/static/images/p3wheel.png",
             },
             {
-                "description": "JLo",
-                "image": "/static/images/p4jlo.png",
+                "description": "Jennifer Lopez in a Versace gown at the 2000 Grammy Awards. The analagous green-torquoise color pairing pops.",
+                "image": "/static/images/p3jlo.png",
             },
             {
-                "description": "Alexa Chung",
-                "image": "/static/images/p4alexa.png",
+                "description": "British designer Alexa Chung in a split-tone red-and-pink dress.",
+                "image": "/static/images/p3alexa.png",
+            }
+        ],
+    },
+    {
+        "id": "4",
+        "text": "When in doubt, pick a few neutrals and a hint of color!",
+        "examples": [
+            {
+                "description": "This outfit consits mostly of the neutrals beige and white, but adds a pop of pink footwear.",
+                "image": "/static/images/p4heels.png",
+            },
+            {
+                "description": "The neutrals navy and white create a balanced look on top of bright, eye-catching red loafers.",
+                "image": "/static/images/p4red.png",
+            },
+            {
+                "description": "Ryan Gosling adds a touch of flair to the traditional navy suit and black shoes with an orange-yellow knit shirt.",
+                "image": "/static/images/p4yellow.jpeg",
             }
         ],
     },
     {
         "id": "5",
-        "text": "When in doubt, pick a few neutrals and a hint of color!",
-        "examples": [
-            {
-                "description": "Heels",
-                "image": "/static/images/p5heels.png",
-            },
-            {
-                "description": "Red",
-                "image": "/static/images/p5red.png",
-            },
-            {
-                "description": "Yellow",
-                "image": "/static/images/p5yellow.jpeg",
-            }
-        ],
-    },
-    {
-        "id": "6",
         "text": "Never be afraid of color",
         "examples": [
             {
-                "description": "Pink suit",
-                "image": "/static/images/p6rocky.png",
+                "description": "Rapper A$AP Rocky sports a pink Loewe tuxedo at the 2019 pre-Grammys gala.",
+                "image": "/static/images/p5rocky.png",
             },
             {
-                "description": "All red",
-                "image": "/static/images/p6kanye.png",
+                "description": "Kanye performs in an all-red suit-and-sneaker combo at the 2010 VMAs.",
+                "image": "/static/images/p5kanye.png",
             },
             {
-                "description": "Zendaya",
-                "image": "/static/images/p6zendaya.png",
+                "description": "Zendaya wears a many-colored print Dolce & Gabbana ballgown at the 2017 Met Gala.",
+                "image": "/static/images/p5zendaya.png",
             }
         ],
     },
