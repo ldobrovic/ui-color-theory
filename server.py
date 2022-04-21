@@ -108,7 +108,7 @@ lessons = [
         "text": "Never be afraid of color",
         "examples": [
             {
-                "description": "Rapper A$AP Rocky sports a pink Loewe tuxedo with white shirt and sneakers at the 2019 pre-Grammys gala.",
+                "description": "Rapper A$AP Rocky sports a daring pink Loewe tuxedo with a classic white shirt and sneakers at the 2019 pre-Grammys gala.",
                 "image": "/static/images/p5rocky.png",
             },
             {
@@ -116,7 +116,7 @@ lessons = [
                 "image": "/static/images/p5kanye.png",
             },
             {
-                "description": "Zendaya wears a yellow and red all-over-print Dolce & Gabbana ballgown at the 2017 Met Gala.",
+                "description": "Zendaya wears a red-yellow-orange (analogous colors!) all-over-print Dolce & Gabbana ballgown at the 2017 Met Gala.",
                 "image": "/static/images/p5zendaya.png",
             }
         ],
@@ -268,7 +268,7 @@ questions = [
             },
             {
                 "description": "white",
-                "image": "/static/images/q5white.png",
+                "image": "/static/images/q5white.jpeg",
             },
             {
                 "description": "pink",

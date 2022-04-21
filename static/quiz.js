@@ -228,8 +228,8 @@ function outfit_grid(images){
 /************************question 5****************************/
 function img_grid(images){
     $.each(images, function(index,value){
-        let block = $('<div  class="col-2 justify-content-center">')
-        let img  = $('<img class="color-block height-150" src="'+value.image+'" alt="'+value.description+'">')
+        let block = $('<div  class="col-md-3 justify-content-center">')
+        let img  = $('<img class="color-block q5_img" src="'+value.image+'" alt="'+value.description+'">')
 
         block.append(img)
         $('#color-grid').append(block)
