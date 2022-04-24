@@ -39,7 +39,7 @@
   cursor: grab;
 }
 .block-border {
-  border: 5px solid grey;
+  border: 5px solid rgb(88, 86, 86);
 }
 .correct-border {
   border: 5px solid rgb(13, 229, 13);
@@ -113,10 +113,9 @@
   padding-left: 30px;
 }
 .img_wrap {
-  /* position: relative; */
   height: 370px;
   width: auto;
-  opacity: 0.5;
+  /* opacity: 0.3; */
 }
 
 .img_description {
@@ -136,7 +135,11 @@
   transition: opacity 0.2s, visibility 0.2s;
 }
 
-.img_hover:hover .img_wrap {
+.img_hover {
+  opacity: 0.4;
+}
+
+.img_hover:hover {
   opacity: 1;
 }
 
@@ -144,6 +147,27 @@
   visibility: visible;
   opacity: 1;
 }
+
+/* .img_hover:hover .img_wrap{
+  opacity: 1;
+} */
+
+/* .img_wrap:hover + .img_description {
+  visibility: visible;
+  opacity: 1;
+}
+
+.img_description:hover {
+  opacity: 1;
+}
+
+.img_description:hover .img_wrap{
+  opacity: 1;
+}
+
+.img_wrap:hover {
+  opacity: 1;
+} */
 
 .prev_margin {
   margin-right: 780px;
@@ -176,13 +200,13 @@
   width: auto;
 }
 
-.head,
+/* .head,
 .shoulder,
 .hand,
 .leg,
 .bod {
-  position: absolute;
-}
+  position: absolute; 
+} */
 
 .stick_container {
   display: block;
@@ -276,4 +300,7 @@
 }
 .accessory-spacing {
   margin-top: 130px;
+}
+.full_opacity {
+  opacity: 1 !important;
 }
