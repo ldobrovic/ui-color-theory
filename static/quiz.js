@@ -128,9 +128,23 @@ function outfit_grid(images){
  }
 
  function makeOutfit(){
-    let clothes = $('<div class="col-3">')
-    let top = $(' <div class="row droppable my-1 px-1 " id="top">')
-    top.text('Drop your top here!')
+    let clothes = $('<div class="col-md-12 row stick_container">')
+    let top = $(' <div class=" col-md-12 parent " id="top">')
+    top.append(' <div class="torso">')
+    top.append(' <div class="leftarm">')
+    top.append(' <div class="rightarm">')
+
+    let bottom = $(' <div class="col-md-12  parent" id="bottom">')
+    bottom.append(' <div class="leftleg">')
+    bottom.append(' <div class="rightleg">')
+
+    head = $(' <div class=" col-md-12 ">')
+    head.append(' <div class="head">')
+
+    clothes.append(head)
+    clothes.append(top)
+    clothes.append(bottom)
+    // top.text('Drop your top here!')
     top.droppable({
         drop: function(event, ui){
 
@@ -139,7 +153,10 @@ function outfit_grid(images){
             outfit_grid(data.images)
             drag.removeAttr("style");
             top.text('')
-            top.append(drag)
+            // top.append(' <div class="torso">')
+            // top.append(' <div class="leftarm">')
+            // top.append(' <div class="rightarm">')
+            top.append(drag).attr("class", "topp")
             if(!submission.includes(drag.attr('alt'))){
                 submission[0]=drag.attr('alt');
             } 
@@ -147,8 +164,8 @@ function outfit_grid(images){
         },
         accept: '.top'
     })
-    let bottom = $(' <div class="row droppable my-1 px-1 " id="bottom">')
-    bottom.text('Drop your bottom here!')
+    
+    // bottom.text('Drop your bottom here!')
     
     bottom.droppable({
         drop: function(event, ui){
@@ -157,7 +174,8 @@ function outfit_grid(images){
             outfit_grid(data.images)
             drag.removeAttr("style");
             bottom.text("")
-            bottom.append(drag)
+           
+            bottom.append(drag).attr("class", "pants")
             if(!submission.includes(drag.attr('alt'))){
                 submission[1]=drag.attr('alt');
             } 
@@ -166,18 +184,18 @@ function outfit_grid(images){
         },
         accept: '.bottom'
     })
-    let accesory = $('<div class="col-3 droppable m-1 " id="accesory">')
-    accesory.text('Drop your accesory here!')
+    let accessory = $('<div class="col-md-3 text-font accessory-spacing" id="accessory">')
+    accessory.text('Drop your accessory here!')
     
-    accesory.droppable({
+    accessory.droppable({
         drop: function(event, ui){
             let drag = ui.draggable
             $('#color-grid').empty()
             outfit_grid(data.images)
             drag.removeAttr("style");
-            accesory.text("")
+            accessory.text("")
 
-            accesory.append(drag)
+            accessory.append(drag)
             if(!submission.includes(drag.attr('alt'))){
                 submission[2]=drag.attr('alt');
             } 
@@ -185,11 +203,13 @@ function outfit_grid(images){
         },
         accept: '.accesory'
     })
-    clothes.append(top)
-    clothes.append(bottom)
+
     
+    
+   
     $('#drop-grid').append(clothes)
-    $('#drop-grid').append(accesory)
+    // $('#drop-grid').append(clothes).attr("class", "disinlineblck")
+    $('#drop-grid').append(accessory)
 
  }
 
@@ -285,7 +305,7 @@ function img_grid(images){
         color_grid(data.images)
         $('#submit').click(function(e){
             let correct = showCorrectGrid()
-            let ans = $('<div class="col-12 feedback">')
+            let ans = $('<div class="col-12 text-font feedback">')
             if(checkColorAnswers()){
                 ans.text('Good Job! You got all correct.')
                 save_answers(submission,1)
@@ -299,7 +319,7 @@ function img_grid(images){
             }
            $('#color-grid').append(ans)
            $('#submit').remove()
-           let nextQ =  $('<a href="/quiz/'+next+'" class="btn btn-primary mx-1">')
+           let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font btn-primary mx-1">')
            nextQ.text('Next Question')
            $('.quiz-buttons').append(nextQ)
         })
@@ -308,7 +328,7 @@ function img_grid(images){
         color_grid(data.images)
         $('#submit').click(function(e){
             let correct = showCorrectGrid()
-            let ans = $('<div class="col-12 feedback">')
+            let ans = $('<div class="col-12 text-font feedback">')
             if(checkColorAnswers()&&correct==2){
                 ans.text('Good Job! You got all correct.')
                 save_answers(submission,1)
@@ -322,7 +342,7 @@ function img_grid(images){
 
            $('#color-grid').append(ans)
            $('#submit').remove()
-           let nextQ =  $('<a href="/quiz/'+next+'" class="btn btn-primary mx-1">')
+           let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font btn-primary mx-1">')
            nextQ.text('Next Question')
            $('.quiz-buttons').append(nextQ)
         })
@@ -334,10 +354,10 @@ function img_grid(images){
         makeOutfit()
         $('#submit').click(function(e){
             $('.feedback').remove()
-            let ans = $('<div class="col-12 feedback">')
+            let ans = $('<div class="col-12 text-font feedback">')
             if (submission.length<2){
                 ans.text('Please make your outfit!')
-                $('#drop-grid').append(ans)
+                $('#quiz-feedback').append(ans)
             } else {
                 let colors = checkOutfit(data.answer,next)
            
@@ -361,9 +381,9 @@ function img_grid(images){
                     }
     
                 }
-               $('#drop-grid').append(ans)
+               $('#quiz-feedback').append(ans)
                $('#submit').remove()
-               let nextQ =  $('<a href="/quiz/'+next+'" class="btn btn-primary mx-1">')
+               let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font btn-primary mx-1">')
                nextQ.text('Next Question')
                $('.quiz-buttons').append(nextQ)
             $('.draggable').draggable( "disable" )
@@ -375,21 +395,21 @@ function img_grid(images){
     } else {
         img_grid(data.images)
         $('#submit').click(function(e){
-            let ans = $('<div class="col-12 feedback">')
+            let ans = $('<div class="col-12 text-font feedback">')
             if(submission.length==0){
                 ans.text("Please choose an outfit")
             } else {
                 $('.feedback').remove()
                 ans.text("Correct! Any outfit you like is best :)")
                 $('#submit').remove()
-                let nextQ =  $('<a href="/quiz/'+next+'" class="btn btn-primary mx-1">')
-                nextQ.text('Next Question')
+                let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font btn-primary mx-1">')
+                nextQ.text('Complete Quiz')
                 $('.quiz-buttons').append(nextQ)
                 save_answers(submission,1)
             }
             $(".block-border").addClass('correct-border')
             $('img').off('click');
-            $('#drop-grid').append(ans)
+            $('#quiz-feedback').append(ans)
            
         })
 
