@@ -1,4 +1,6 @@
  let submission = []
+ let selected = []
+
  function color_grid(colors){
 
      $.each(colors, function(index,value){
@@ -7,9 +9,18 @@
            block.click(function(e){
                if(block.hasClass("block-border")){
                     block.removeClass("block-border")
-                    submission.splice(submission.indexOf(value),1)  
-
+                    submission.splice(submission.indexOf(value),1)
+                    if (next == 3) {
+                        selected.splice(selected.indexOf(block), 1)
+                    }
                } else{
+                   if (next == 3) {
+                    if (selected.length >= 2) {
+                        selected.shift().removeClass("block-border")
+                        submission.splice(0, 1)
+                    }
+                   selected.push(block)
+                   }
                    block.addClass("block-border")
                    submission.push(value)
                }
@@ -18,19 +29,24 @@
      })
  }
 
+ function highlightResults(correct) {
+     if (correct) {
+         selected[0].addClass("correct-border")
+         selected[1].addClass("correct-border")
+     } else {
+        selected[0].addClass("wrong-border")
+        selected[1].addClass("wrong-border")
+     }
+ }
+
  function checkColorAnswers(){
      let answers = data.answer
      if (next==3){
-        let pair1 = answers[0]
-        let pair2 =answers[1]
-        if(submission.includes(pair1[0])){
-            if(submission.includes(pair1[1])){
-               return true
-            } 
-        }
-        if(submission.includes(pair2[0])){
-            if(submission.includes(pair2[1])){
-               return true
+        for (let i=0; i<answers.length; i++) {
+            if (submission.includes(answers[i][0])) {
+                if (submission.includes(answers[i][1])) {
+                    return true
+                }
             }
         }
      } else {
@@ -75,7 +91,6 @@
            $('#color-grid').append(block)
           if(pair1.includes(value)||pair2.includes(value)){
               block.addClass('correct-border')
-              console.log(value)
           } 
           else if(submission.includes(value)&& !(pair1.includes(value)||pair2.includes(value))){
               block.addClass('wrong-border')
@@ -143,7 +158,6 @@ function outfit_grid(images){
             if(!submission.includes(drag.attr('alt'))){
                 submission[0]=drag.attr('alt');
             } 
-            console.log(submission[0])
         },
         accept: '.top'
     })
@@ -161,8 +175,6 @@ function outfit_grid(images){
             if(!submission.includes(drag.attr('alt'))){
                 submission[1]=drag.attr('alt');
             } 
-            console.log(submission[1])
-
         },
         accept: '.bottom'
     })
@@ -181,7 +193,6 @@ function outfit_grid(images){
             if(!submission.includes(drag.attr('alt'))){
                 submission[2]=drag.attr('alt');
             } 
-            console.log(submission[2]) 
         },
         accept: '.accesory'
     })
@@ -265,15 +276,14 @@ function img_grid(images){
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(item),
         success: function(result){
-            console.log('answers saved')
-            console.log(result["user_answers"])
+            // console.log('answers saved')
+            // console.log(result["user_answers"])
         },
         error: function(request,status, error){
-            console.log("Error!!!!!!!!!")
+            console.log("Error")
             console.log(request)
             console.log(status)
             console.log(error)
-
         }
 
     })
@@ -307,19 +317,17 @@ function img_grid(images){
     } else if(next==3){
         color_grid(data.images)
         $('#submit').click(function(e){
-            let correct = showCorrectGrid()
             let ans = $('<div class="col-12 feedback">')
-            if(checkColorAnswers()&&correct==2){
-                ans.text('Good Job! You got all correct.')
-                save_answers(submission,1)
-            } else if(correct==1){
-                ans.text('Good Job! You got '+correct+' correct. Right answers are in green!')
+            let isCorrect = checkColorAnswers()
+            if(isCorrect){
+                ans.text('Good Job!')
                 save_answers(submission,1)
             } else {
-                ans.text('Try reviewing your color wheel! You got '+correct+' correct. Right answers are in green!')
+                ans.text('Try reviewing your color wheel! Possible pairings are found next to each other on the color wheel, such as blue and purple, red and orange, or yellow and green.')
                 save_answers(submission,0)
             }
-
+            
+            highlightResults(isCorrect)
            $('#color-grid').append(ans)
            $('#submit').remove()
            let nextQ =  $('<a href="/quiz/'+next+'" class="btn btn-primary mx-1">')
@@ -383,7 +391,7 @@ function img_grid(images){
                 ans.text("Correct! Any outfit you like is best :)")
                 $('#submit').remove()
                 let nextQ =  $('<a href="/quiz/'+next+'" class="btn btn-primary mx-1">')
-                nextQ.text('Next Question')
+                nextQ.text('View results')
                 $('.quiz-buttons').append(nextQ)
                 save_answers(submission,1)
             }
