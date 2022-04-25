@@ -6,26 +6,13 @@ $(document).ready(function(){
     $(".img_hover").hover(function() {
         $(this).addClass('full_opacity');
     })
-    // $('img[usemap]').maphilight({
-    //     fill: false,
-    //     fillColor: '000000',
-    //     fillOpacity: 0.0,
-    //     stroke: true,
-    //     strokeColor: 'black',
-    //     strokeOpacity: 1,
-    //     strokeWidth: 4,
-    //     fade: true,
-    //     alwaysOn: false,
-    //     neverOn: false,
-    //     groupBy: 'rel',
-    // })
+   
     $('img').mapster({
         
         stroke: true,
         strokeOpacity: 1.0,
         strokeColor: 'black',
         strokeWidth: 3,
-        // singleSelect: true,
         mapKey: 'alt',
         areas: [
             {

@@ -171,7 +171,7 @@ function outfit_grid(images){
             // top.append(' <div class="torso">')
             // top.append(' <div class="leftarm">')
             // top.append(' <div class="rightarm">')
-            top.append(drag).attr("class", "topp").addClass("pr-3")
+            top.append(drag).attr("class", "topp")
             if(!submission.includes(drag.attr('alt'))){
                 submission[0]=drag.attr('alt');
             } 
@@ -189,7 +189,7 @@ function outfit_grid(images){
             drag.removeAttr("style");
             bottom.text("")
            
-            bottom.append(drag).attr("class", "pants").addClass("pl-4")
+            bottom.append(drag).attr("class", "pants")
             if(!submission.includes(drag.attr('alt'))){
                 submission[1]=drag.attr('alt');
             } 

@@ -9,27 +9,28 @@
 <!-- <script src="https://projects.davidlynch.org/maphilight/jquery.maphilight.js"></script> -->
 <script src="../static/jquery.imagemapster.js"></script>
 
-
+<div class="quiz-container">
 <div class="row">
   {% if next == 1 %}
-  <div class="col-md-12">
-    <br />
-    <div id="learn_header" class="text-font big_bold">{{data.text}}</div>
+  <div class="col-md-12  align-items-center ">
+    <div id="learn_header" class="quiz-header my-4 text-center ">{{data.text}}</div>
+    <div class=" text-center">
+      <a href="/learn/{{next}}" class="btn btn-primary ">Start Lesson</a>
+    </div>
   </div>
   {% else %}
   <div class="disinlineblck">
-    <br />
-    <div id="learn_header2" class="big_bold text-font disinlineblck">
+   
+    <div id="learn_header2" class="quiz-header font-weight-bold disinlineblck">
       Principle {{data.id}}
     </div>
 
-    <div class="text-font">{{data.text}}</div>
+    <div class="principle my-2">{{data.text}}</div>
   </div>
-  <br />
-  <br />
+  
 </div>
 {% endif %}
-<br/>
+
 
 {% if next == 2 or next == 4 or next == 5 or next == 6 %}
 
@@ -72,7 +73,7 @@
             class="img_wrap"
             id="{{example.image.split('/')[3]}}"
           />
-          <p class="img_description text-font">{{example.description}}</p>
+          <p class="img_description ">{{example.description}}</p>
         </div>
 
       {%endif%}
@@ -92,12 +93,12 @@
     <div class="text-center">
       <img
         src="{{example.image}}"
-        alt="exampleImage"
+        alt="{{example.description}}"
         height = auto
         width = 100%
         class="img_wrap"
       />
-      <p class="img_description text-font">{{example.description}}</p>
+      <p class="img_description ">{{example.description}}</p>
     </div>
   </div>
   {% endfor %}
@@ -106,33 +107,31 @@
 
 </div>
 
-<br />
-<br />
-<div class="row">
+<div class="row my-4 ">
   {% if next == 6 %}
-  <a href="/quiz/0" class="btn btn-primary text-font quiz_margin">Quiz me</a>
-  <a href="/learn/0" class="btn btn-secondary text-font">Redo lesson</a>
+  <a href="/quiz/0" class="btn btn-primary  quiz_margin">Quiz me</a>
+  <a href="/learn/0" class="btn btn-secondary ">Redo lesson</a>
   {% elif next == 1 %}
-  <div class="col-md-12 start_center">
-    <a href="/learn/{{next}}" class="btn btn-primary text-font">Start Lesson</a>
-  </div>
+ 
   {% else %}
 
-  <div class="row">
+  <div class="row my-4">
     <div>
       <a
         href="/learn/{{before}}"
-        class="btn btn-secondary text-font prev_margin"
+        class="btn btn-secondary  prev_margin"
         >Previous Principle</a
       >
     </div>
 
     <div class>
-      <a href="/learn/{{next}}" class="btn btn-primary text-font"
+      <a href="/learn/{{next}}" class="btn btn-primary "
         >Next Principle</a
       >
     </div>
   </div>
   {% endif %}
+</div>
+
 </div>
 {% endblock %}
