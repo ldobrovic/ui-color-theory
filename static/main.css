@@ -113,8 +113,7 @@
   padding-left: 30px;
 }
 .img_wrap {
-  height: 370px;
-  width: auto;
+  max-height: 350px;
   /* opacity: 0.3; */
 }
 
@@ -135,7 +134,7 @@
   transition: opacity 0.2s, visibility 0.2s;
 }
 
-.img_hover {
+.img_hover, .wheel{
   opacity: 0.4;
 }
 
@@ -185,15 +184,15 @@
   font-size: 18;
   font-weight: bold;
 }
-.img_center {
-  /* margin-left: 1px;
-  margin-right: 1px; */
-}
+/* .img_center {
+  margin-left: 1px;
+  margin-right: 1px;
+} */
 
-.triple_img_row {
-  padding-left: 10%;
-  padding-right: 10%;
-}
+/* .triple_img_row {
+  padding-left: 10px;
+  padding-right: 10px;
+} */
 
 .q5_img {
   height: 370px;

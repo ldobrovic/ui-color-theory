@@ -237,6 +237,9 @@ function outfit_grid(images){
     }  else {
         let pair1 = wrong_colors[0]
         let pair2 = wrong_colors[1]
+        let pair3 = wrong_colors[3]
+
+       
         if(submission.includes(pair1[0])){
             if(submission.includes(pair1[1])){
                 if(!(submission.includes(pair2[1])||submission.includes(pair2[0]))){
@@ -244,12 +247,20 @@ function outfit_grid(images){
                 }
             } 
         }
+
         if(submission.includes(pair2[0])){
             if(submission.includes(pair2[1])){
                 if(!(submission.includes(pair1[1])||submission.includes(pair1[0]))){
                     return 1
                 }
             }
+        }
+        if(submission.includes(pair3[0])){
+            if(submission.includes(pair3[1])){
+                if(!(submission.includes(pair1[1])||submission.includes(pair2[0]))){
+                    return 1
+                }
+            } 
         }
     }
     return 3
