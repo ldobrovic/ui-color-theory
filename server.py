@@ -224,6 +224,7 @@ questions = [
         "answer":[
             ["red","orange"],
             ["navy", "purple"],
+            ["red", "purple"],
         ],
         "images": [
             {

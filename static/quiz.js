@@ -265,14 +265,14 @@ function img_grid(images){
         block.append(img)
         $('#color-grid').append(block)
         img.click(function(e){
-            if(img.hasClass("block-border")){
-                 img.removeClass("block-border")
+            if(img.hasClass("q5_highlight")){
+                 img.removeClass("q5_highlight")
                  submission=[]  
 
             } else{
-                $(".block-border").removeClass("block-border")
+                $(".q5_highlight").removeClass("q5_highlight")
                 submission = []
-                img.addClass("block-border")
+                img.addClass("q5_highlight")
                 submission.push(value)
             }
         })
@@ -408,6 +408,7 @@ function img_grid(images){
                 ans.text("Please choose an outfit")
             } else {
                 $('.feedback').remove()
+                $(".q5_highlight").addClass("q5_correct")
                 ans.text("Correct! Any outfit you like is best :)")
                 $('#submit').remove()
                 let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font btn-primary mx-1">')

@@ -33,6 +33,7 @@
 }
 .color-block {
   min-height: 100px;
+  min-width: 125px;
 }
 .color-block:hover {
   opacity: 0.8;
@@ -200,13 +201,14 @@
   width: auto;
 }
 
-/* .head,
-.shoulder,
-.hand,
-.leg,
-.bod {
-  position: absolute; 
-} */
+.q5_highlight {
+  outline: 5px solid rgb(88, 86, 86);
+  outline-offset: -5px;
+}
+
+.q5_correct {
+  outline-color:rgb(13, 229, 13) !important;
+}
 
 .stick_container {
   display: block;
