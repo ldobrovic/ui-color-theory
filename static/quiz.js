@@ -149,7 +149,7 @@ function outfit_grid(images){
     top.append(' <div class="leftarm">')
     top.append(' <div class="rightarm">')
 
-    let bottom = $(' <div class="col-md-12  parent" id="bottom">')
+    let bottom = $(' <div class="col-md-12 parent" id="bottom">')
     bottom.append(' <div class="leftleg">')
     bottom.append(' <div class="rightleg">')
 
@@ -171,7 +171,7 @@ function outfit_grid(images){
             // top.append(' <div class="torso">')
             // top.append(' <div class="leftarm">')
             // top.append(' <div class="rightarm">')
-            top.append(drag).attr("class", "topp")
+            top.append(drag).attr("class", "topp").addClass("pr-3")
             if(!submission.includes(drag.attr('alt'))){
                 submission[0]=drag.attr('alt');
             } 
@@ -189,7 +189,7 @@ function outfit_grid(images){
             drag.removeAttr("style");
             bottom.text("")
            
-            bottom.append(drag).attr("class", "pants")
+            bottom.append(drag).attr("class", "pants").addClass("pl-4")
             if(!submission.includes(drag.attr('alt'))){
                 submission[1]=drag.attr('alt');
             } 
@@ -237,6 +237,9 @@ function outfit_grid(images){
     }  else {
         let pair1 = wrong_colors[0]
         let pair2 = wrong_colors[1]
+        let pair3 = wrong_colors[3]
+
+       
         if(submission.includes(pair1[0])){
             if(submission.includes(pair1[1])){
                 if(!(submission.includes(pair2[1])||submission.includes(pair2[0]))){
@@ -244,12 +247,20 @@ function outfit_grid(images){
                 }
             } 
         }
+
         if(submission.includes(pair2[0])){
             if(submission.includes(pair2[1])){
                 if(!(submission.includes(pair1[1])||submission.includes(pair1[0]))){
                     return 1
                 }
             }
+        }
+        if(submission.includes(pair3[0])){
+            if(submission.includes(pair3[1])){
+                if(!(submission.includes(pair1[1])||submission.includes(pair2[0]))){
+                    return 1
+                }
+            } 
         }
     }
     return 3
