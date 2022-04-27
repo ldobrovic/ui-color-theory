@@ -69,7 +69,7 @@ lessons = [
     },
     {
         "id": "3",
-        "text": "On a color wheel, colors next to each other (analogous colors) go well together!",
+        "text": "On a color wheel, colors next to each other (analogous colors) go well together! ",
         "examples": [
             {
                 "description": "Color wheel",
@@ -218,6 +218,7 @@ questions = [
         "answer":[
             ["red","orange"],
             ["navy", "purple"],
+            ["red", "purple"]
         ],
         "images": [
             {

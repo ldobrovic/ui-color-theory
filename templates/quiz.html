@@ -9,28 +9,28 @@
 <div class="quiz-container align-items-center row">
   {% if next == 1 or next == 7%}
   <div class="col">
-    <div class="quiz-header text-font text-center my-4">{{data.text}}</div>
+    <div class="quiz-header  text-center my-4">{{data.text}}</div>
     {% if next == 7%}
-    <div class="quiz-header text-font text-center my-4" id="overall"></div>
+    <div class="quiz-header  text-center my-4" id="overall"></div>
 
     {%endif%}
     <div class="quiz-buttons text-center">
       {% if next == 7%}
-      <a href="/quiz/{{next}}" class="btn text-font btn-primary">Redo Quiz</a>
+      <a href="/quiz/{{next}}" class="btn  btn-primary">Redo Quiz</a>
       {%else%}
-      <a href="/quiz/{{next}}" class="btn text-font btn-primary">Start Quiz</a>
+      <a href="/quiz/{{next}}" class="btn  btn-primary">Start Quiz</a>
       {%endif%}
-      <a href="/" class="btn text-font btn-secondary">Home </a>
+      <a href="/" class="btn  btn-secondary">Home </a>
     </div>
   </div>
   {% else %}
   <div class="col">
     <div class="row d-block">
-      <div class="quiz-header my-2 text-font font-weight-bold">
+      <div class="quiz-header my-2  font-weight-bold">
         Question {{data.id}}:
       </div>
 
-      <div class="quiz-header text-font my-2">{{data.text}}</div>
+      <div class="quiz-header  my-2">{{data.text}}</div>
     </div>
 
     <div class="row">
@@ -43,11 +43,11 @@
       <div class="quiz-buttons my-3">
         {% if next == 7 %}
 
-        <a href="/" class="btn text-font btn-secondary">Home</a>
-        <a href="/learn/0" class="btn text-font btn-secondary">Redo lesson</a>
-        <a href="/quiz/0" class="btn text-font btn-secondary">Redo quiz</a>
+        <a href="/" class="btn  btn-secondary">Home</a>
+        <a href="/learn/0" class="btn  btn-secondary">Redo lesson</a>
+        <a href="/quiz/0" class="btn  btn-secondary">Redo quiz</a>
         {% elif next!=1 %}
-        <button id="submit" class="btn text-font btn-primary">Submit</button>
+        <button id="submit" class="btn  btn-primary">Submit</button>
 
         {% endif %} {% endif %}
       </div>

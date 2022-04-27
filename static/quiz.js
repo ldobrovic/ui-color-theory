@@ -149,7 +149,7 @@ function outfit_grid(images){
     top.append(' <div class="leftarm">')
     top.append(' <div class="rightarm">')
 
-    let bottom = $(' <div class="col-md-12  parent" id="bottom">')
+    let bottom = $(' <div class="col-md-12 parent" id="bottom">')
     bottom.append(' <div class="leftleg">')
     bottom.append(' <div class="rightleg">')
 
@@ -237,6 +237,9 @@ function outfit_grid(images){
     }  else {
         let pair1 = wrong_colors[0]
         let pair2 = wrong_colors[1]
+        let pair3 = wrong_colors[3]
+
+       
         if(submission.includes(pair1[0])){
             if(submission.includes(pair1[1])){
                 if(!(submission.includes(pair2[1])||submission.includes(pair2[0]))){
@@ -244,12 +247,20 @@ function outfit_grid(images){
                 }
             } 
         }
+
         if(submission.includes(pair2[0])){
             if(submission.includes(pair2[1])){
                 if(!(submission.includes(pair1[1])||submission.includes(pair1[0]))){
                     return 1
                 }
             }
+        }
+        if(submission.includes(pair3[0])){
+            if(submission.includes(pair3[1])){
+                if(!(submission.includes(pair1[1])||submission.includes(pair2[0]))){
+                    return 1
+                }
+            } 
         }
     }
     return 3
@@ -265,14 +276,14 @@ function img_grid(images){
         block.append(img)
         $('#color-grid').append(block)
         img.click(function(e){
-            if(img.hasClass("block-border")){
-                 img.removeClass("block-border")
+            if(img.hasClass("q5_highlight")){
+                 img.removeClass("q5_highlight")
                  submission=[]  
 
             } else{
-                $(".block-border").removeClass("block-border")
+                $(".q5_highlight").removeClass("q5_highlight")
                 submission = []
-                img.addClass("block-border")
+                img.addClass("q5_highlight")
                 submission.push(value)
             }
         })
@@ -408,6 +419,7 @@ function img_grid(images){
                 ans.text("Please choose an outfit")
             } else {
                 $('.feedback').remove()
+                $(".q5_highlight").addClass("q5_correct")
                 ans.text("Correct! Any outfit you like is best :)")
                 $('#submit').remove()
                 let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font btn-primary mx-1">')
