@@ -350,11 +350,27 @@ function img_grid(images){
         $('#submit').click(function(e){
             let ans = $('<div class="col-12 text-font feedback">')
             let isCorrect = checkColorAnswers()
+            let colorWheel = $('<button/>',
+            {
+                id: 'open',
+                text: 'here',
+                class: 'btn medium_bold'
+               
+            });
             if(isCorrect){
                 ans.text('Good Job!')
                 save_answers(submission,1)
             } else {
-                ans.text('Try reviewing your color wheel! Possible pairings are found next to each other on the color wheel, such as blue and purple, red and orange, or yellow and green.')
+               
+                ans.text('Try reviewing your colorwheel ')
+                ans.append(colorWheel)
+                ans. append('. Possible pairings are found next to each other on the color wheel, such as blue and purple, red and orange, or yellow and green.')
+                $(".open").on("click", function () {
+                    $(".popup-overlay, .popup-content").addClass("active");
+                    });
+                $("#close").on("click", function(){
+                    $(".popup, .popup-content").removeClass("active");
+                    });
                 save_answers(submission,0)
             }
             
