@@ -1,31 +1,12 @@
-:root {
-  /* color wheel colors */
-  --one: #fffa00;
-  --two: #ffcd00;
-  --three: #ffa100;
-  --four: #ff7300;
-  --five: #ff0000;
-  --six: #ff0096;
-  --seven: #980ec2;
-  --eight: #0025c2;
-  --nine: #007bcc;
-  --ten: #00b6d8;
-  --eleven: #00ba00;
-  --twelve: #68d000;
-  /* neutral colors  */
-  --beige: #e1c699;
-  --navy: #1c4587;
-  /* extra colors */
-  --pink: #ffd6ecff;
-  --fuschia: #cc05fc;
-  --purple: #9900ff;
-  --teal: #01ffff;
-  --orange: #ff9900;
-  --pink: #ff00ff;
+body {
+  font-family: "Trebuchet MS";
 }
 
 .quiz-container {
   padding: 1em;
+}
+.principle{
+  font-size: large;
 }
 
 .quiz-header {
@@ -33,6 +14,7 @@
 }
 .color-block {
   min-height: 100px;
+  min-width: 125px;
 }
 .color-block:hover {
   opacity: 0.8;
@@ -88,20 +70,13 @@
   text-align: center;
   font-weight: bold;
   font-size: large;
-  font-family: "Trebuchet MS";
   margin-top: 60px;
   margin-bottom: 15px;
   color: black;
 }
-.text-font {
-  font-family: "Trebuchet MS";
-}
-#learn_header {
-  padding-left: 280px;
-}
-.start_center {
-  padding-left: 530px;
-}
+
+
+
 .container1 {
   height: 250px;
   width: auto;
@@ -113,8 +88,7 @@
   padding-left: 30px;
 }
 .img_wrap {
-  height: 370px;
-  width: auto;
+  max-height: 350px;
   /* opacity: 0.3; */
 }
 
@@ -135,7 +109,7 @@
   transition: opacity 0.2s, visibility 0.2s;
 }
 
-.img_hover {
+.img_hover, .wheel{
   opacity: 0.4;
 }
 
@@ -156,15 +130,12 @@
   visibility: visible;
   opacity: 1;
 }
-
 .img_description:hover {
   opacity: 1;
 }
-
 .img_description:hover .img_wrap{
   opacity: 1;
 }
-
 .img_wrap:hover {
   opacity: 1;
 } */
@@ -175,9 +146,7 @@
 .quiz_margin {
   margin-right: 20px;
 }
-.welcome_center {
-  padding-left: 450px;
-}
+
 .disinlineblck {
   display: inline-block;
 }
@@ -185,28 +154,29 @@
   font-size: 18;
   font-weight: bold;
 }
-.img_center {
-  /* margin-left: 1px;
-  margin-right: 1px; */
-}
+/* .img_center {
+  margin-left: 1px;
+  margin-right: 1px;
+} */
 
-.triple_img_row {
-  padding-left: 10%;
-  padding-right: 10%;
-}
+/* .triple_img_row {
+  padding-left: 10px;
+  padding-right: 10px;
+} */
 
 .q5_img {
   height: 370px;
   width: auto;
 }
 
-/* .head,
-.shoulder,
-.hand,
-.leg,
-.bod {
-  position: absolute; 
-} */
+.q5_highlight {
+  outline: 5px solid rgb(88, 86, 86);
+  outline-offset: -5px;
+}
+
+.q5_correct {
+  outline-color:rgb(13, 229, 13) !important;
+}
 
 .stick_container {
   display: block;

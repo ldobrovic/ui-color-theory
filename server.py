@@ -151,26 +151,20 @@ questions = [
     },
     {
         "id": "2",
-        "text": "Identify an analogous color pair",
+        "text": "Identify at least one analogous color pair",
         "images": [
-            "#00ba00", #green
-            "#ff0000", #red
-            "black", #black
-            "#ffa100", #orange
-            "#00b6d8", #teal
-            "#fffa00", #yellow
-            "#0025c2", #blue
-            "#980ec2", #purple
+            "#00ba00",
+            "#ff0000",
+            "black",
+            "#ffa100",
+            "#00b6d8",
+            "#fffa00",
+            "#0025c2",
+            "#980ec2", #navy
         ],
          "answer":[
-             ["#00ba00", "#fffa00",], #green and yellow
-             ["#00ba00", "#0025c2"], #green and blue
-             ["#ff0000", "#ffa100"], #red and orange
-             ["#ff0000","#980ec2" ], #red and purple
-             ["#ffa100","#fffa00"], #orange and yellow
-             ["#00b6d8",  "#0025c2"], #teal and blue
-             ["#00b6d8", "#00ba00"], #teal and green
-             ["#0025c2", "#980ec2"] #blue and purple
+            ["#00ba00","#00b6d8"],
+            ["#0025c2", "#980ec2"],
         ],
     },
     {
