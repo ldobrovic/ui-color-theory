@@ -3,8 +3,46 @@
 
 $(document).ready(function(){
 
+    num_images = document.getElementsByClassName('img_tag').length
+    a = Array(num_images).fill(0)
+    descriptions = document.getElementsByClassName('img_description');
+
+    for (let i=0; i<descriptions.length; i++) {
+        console.log(descriptions[i]);
+        id = $(descriptions[i]).attr("id")[1];
+
+        images = document.getElementsByClassName('img_tag');
+        for (let j=0; j<images.length; j++) {
+            img_id = $(images[j]).attr("id")[1];
+            if (id == img_id) {
+                $(descriptions[i]).width($(images[j]).width());
+                left_marg = $(images[j]).css("margin-left");
+                left_marg = parseFloat(left_marg.slice(0, -1));
+                console.log(left_marg);
+                $(descriptions[i]).css(
+                    "top", $(images[j]).height() - $(descriptions[i]).height()
+                )
+                $(descriptions[i]).css(
+                    "left", left_marg
+                )
+            }
+        }
+    }
+
+
     $(".img_hover").hover(function() {
-        $(this).addClass('full_opacity');
+        child = $(this).children().css({"class": "img_tag"});
+        id = $(child[0]).attr("id")[1];
+        $(child[0]).addClass("full_opacity");
+        width = $(child[0]).width()
+        a[id-1] = 1
+        let result = a.every(function (e) {
+            return e == 1;
+        })
+        if (result) {
+            $("#next_btn").removeClass("btn-secondary");
+            $("#next_btn").addClass("btn-primary");
+        }
     })
    
     $('img').mapster({

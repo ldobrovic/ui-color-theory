@@ -1,12 +1,40 @@
+html {
+  background-color: #fce9d9;
+}
+
 body {
   font-family: "Trebuchet MS";
+}
+
+.navstyle {
+  background-color: lightsteelblue !important;
 }
 
 .quiz-container {
   padding: 1em;
 }
-.principle{
+
+.learn_buttons {
+  /* margin-top: 60px; */
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.learn_top {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.principle_num{
   font-size: large;
+  font-weight: 100;
+  margin-bottom: -10px;
+}
+
+.principle{
+  font-size: xx-large;
+  font-weight: light;
+  margin-bottom: 30px;
 }
 
 .quiz-header {
@@ -87,58 +115,60 @@ body {
   padding-right: 55px;
   padding-left: 30px;
 }
-.img_wrap {
-  max-height: 350px;
-  /* opacity: 0.3; */
+
+.img_hover {
+  position: relative;
 }
+
+.img_wrap {
+  max-height: 400px;
+  position: relative;
+  display: block;
+  opacity: 0.4;
+
+  margin: auto;
+
+  transition: opacity 0.3s linear, visibility 0.3s linear;
+}
+
 
 .img_description {
   position: absolute;
-  top: 10;
-  bottom: 0;
-  left: -10;
-  right: 0;
-  /* background: rgba(213, 224, 231, 0.72); */
-  /* color: brown; */
-  background: rgba(235, 235, 235, 0.72);
+  /* top: 100%; */
+  /* left: 100%; */
+  width: 100%;
+  background: rgba(235, 235, 235, 0.9);
   color: black;
   visibility: hidden;
-  opacity: 0;
 
   /* transition effect. not necessary */
-  transition: opacity 0.2s, visibility 0.2s;
+  /* transition: opacity 0.3s linear, visibility 0.3s linear; */
 }
 
-.img_hover, .wheel{
+.learn_wheel {
+  display: inline-block;
+  padding-top: 100px;
+}
+
+.full_opacity{
+  opacity: 1.0 !important;
+}
+
+.wheel{
   opacity: 0.4;
 }
 
-.img_hover:hover {
-  opacity: 1;
+.img_hover {
+  justify-content: center;
+  text-align: center;
 }
 
 .img_hover:hover .img_description {
   visibility: visible;
   opacity: 1;
-}
 
-/* .img_hover:hover .img_wrap{
-  opacity: 1;
-} */
-
-/* .img_wrap:hover + .img_description {
-  visibility: visible;
-  opacity: 1;
+  transition: all 0.3s ease-in-out;
 }
-.img_description:hover {
-  opacity: 1;
-}
-.img_description:hover .img_wrap{
-  opacity: 1;
-}
-.img_wrap:hover {
-  opacity: 1;
-} */
 
 .prev_margin {
   margin-right: 780px;
@@ -351,3 +381,4 @@ body {
   .popup-content.active {
     visibility: visible;
   }
+
