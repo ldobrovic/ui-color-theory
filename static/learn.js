@@ -17,24 +17,35 @@ $(document).ready(function(){
             let img_id = $(images[j]).attr("id")[1];
           
             if (id == img_id) {
+                console.log("desc", descriptions[i])
+                let width =  $(images[j]).width()
+                if(width!=0){
+                    $(descriptions[i]).width($(images[j]).width());
+                    let left_marg = $(images[j]).css("margin-left");
+                    left_marg = parseFloat(left_marg.slice(0, -1));
+                    $(descriptions[i]).css(
+                        "left", left_marg
+                    )
+    
+                } else {
+                    $(descriptions[i]).width('auto');
 
-                $(descriptions[i]).width($(images[j]).width());
-
-                let left_marg = $(images[j]).css("margin-left");
-                left_marg = parseFloat(left_marg.slice(0, -1));
-
-
-                let top = Math.abs( $(images[j]).height() - $(descriptions[i]).height())
+                }
                 
-                console.log("top",top)
-                console.log("leftm",left_marg)
+               
 
+              
+
+                let top = Math.abs( 400 - $(descriptions[i]).height())
                 $(descriptions[i]).css(
                     "top", top
                 )
-                $(descriptions[i]).css(
-                    "left", left_marg
-                )
+                
+                console.log("top",top)
+               
+
+               
+              
             }
         }
     }

@@ -153,6 +153,7 @@ width: 100px;
   background: rgba(235, 235, 235, 0.9);
   color: black;
   visibility: hidden;
+  z-index: 999999;
 
   /* transition effect. not necessary */
   /* transition: opacity 0.3s linear, visibility 0.3s linear; */
