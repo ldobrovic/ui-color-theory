@@ -155,7 +155,7 @@ body {
   font-weight: bold;
 }
 .medium_bold{
-  font-size: medium;
+  font-size: 18;
   font-weight: bold;
 }
 /* .img_center {
@@ -208,7 +208,7 @@ body {
   border: 3px solid black;
   display: block;
   position: absolute;
-  top: 5px;
+  top: 8px;
   left: 170px;
 }
 
@@ -218,7 +218,7 @@ body {
   border: 3px solid black;
   display: block;
   position: absolute;
-  top: 5px;
+  top: 8px;
   left: 169px;
   transform: rotate(18deg);
   transform-origin: top;
@@ -230,7 +230,7 @@ body {
   border: 3px solid black;
   display: block;
   position: absolute;
-  top: 5px;
+  top: 8px;
   left: 171px;
   transform: rotate(-18deg);
   transform-origin: top;
@@ -242,8 +242,8 @@ body {
   border: 3px solid black;
   display: block;
   position: absolute;
-  top: 36px;
-  left: 71px;
+  top: 45px;
+  left: 72px;
   transform: rotate(-45deg);
   transform-origin: 100%;
 }
@@ -254,20 +254,26 @@ body {
   border: 3px solid black;
   display: block;
   position: absolute;
-  top: 36px;
-  left: 175px;
+  top: 45px;
+  left: 174px;
   transform: rotate(45deg);
   transform-origin: 0%;
 }
 .pants {
-  position: absolute;
-  top: 145px;
+  position: relative;
+  top: -25px;
   left: 130px;
 }
 .topp {
   position: relative;
-  top: 5px;
+  top: 0px;
   left: 130px;
+}
+.hatt{
+  position: relative;
+  top: 0px;
+  left: 130px;
+
 }
 .parent {
   position: relative;
@@ -337,17 +343,13 @@ body {
   background-color: #fce9d9;
   /* background-color: rgb(247, 241, 241); */
 }
-.popup-overlay {
+.quiz-wheel {
+ width: 160px;
+ height: auto;
+}
+  #popup-content {
   visibility: hidden;
   }
-  
-  .popup-content {
-  visibility: hidden;
-  }
-  .popup-overlay.active{
-    visibility: visible;
-  }
-    
-  .popup-content.active {
+  #popup-content.active {
     visibility: visible;
   }

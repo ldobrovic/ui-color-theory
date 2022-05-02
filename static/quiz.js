@@ -153,13 +153,30 @@ function outfit_grid(images){
     bottom.append(' <div class="leftleg">')
     bottom.append(' <div class="rightleg">')
 
-    head = $(' <div class=" col-md-12 ">')
+    head = $(' <div class=" col-md-12 parent">')
     head.append(' <div class="head">')
 
     clothes.append(head)
     clothes.append(top)
     clothes.append(bottom)
     // top.text('Drop your top here!')
+  
+    head.droppable({
+        drop: function(event, ui){
+
+            let drag = ui.draggable
+            $('#color-grid').empty()
+            outfit_grid(data.images)
+            drag.removeAttr("style");
+            head.text('')
+            
+            head.append(drag).attr("class", "hatt")
+            if(!submission.includes(drag.attr('alt'))){
+                submission[0]=drag.attr('alt');
+            } 
+        },
+        accept: '.hat'
+    })
     top.droppable({
         drop: function(event, ui){
 
@@ -196,8 +213,8 @@ function outfit_grid(images){
         },
         accept: '.bottom'
     })
-    let accessory = $('<div class="col-md-3 text-font accessory-spacing" id="accessory">')
-    accessory.text('Drop your accessory here!')
+    let accessory = $('<div class="col-md-4 text-font accessory-spacing" id="accessory">')
+    accessory.text('')
     
     accessory.droppable({
         drop: function(event, ui){
@@ -350,27 +367,14 @@ function img_grid(images){
         $('#submit').click(function(e){
             let ans = $('<div class="col-12 text-font feedback">')
             let isCorrect = checkColorAnswers()
-            let colorWheel = $('<button/>',
-            {
-                id: 'open',
-                text: 'here',
-                class: 'btn medium_bold'
-               
-            });
+
             if(isCorrect){
                 ans.text('Good Job!')
                 save_answers(submission,1)
             } else {
                
-                ans.text('Try reviewing your colorwheel ')
-                ans.append(colorWheel)
-                ans. append('. Possible pairings are found next to each other on the color wheel, such as blue and purple, red and orange, or yellow and green.')
-                $(".open").on("click", function () {
-                    $(".popup-overlay, .popup-content").addClass("active");
-                    });
-                $("#close").on("click", function(){
-                    $(".popup, .popup-content").removeClass("active");
-                    });
+                ans.text('Try reviewing your colorwheel below! Possible pairings are found next to each other on the color wheel, such as blue and purple, red and orange, or yellow and green.')
+                $('#popup-content').addClass("active");
                 save_answers(submission,0)
             }
             

@@ -174,7 +174,7 @@ questions = [
            
             {
                 "description": "white",
-                "image": "/static/images/q3white.png",
+                "image": "/static/images/q4beige.png",
                 "type": "accesory"
             },
              {
@@ -224,7 +224,7 @@ questions = [
             {
                 "description": "red",
                 "image": "/static/images/q4red.png",
-                 "type": "accesory"
+                 "type": "hat"
             },
           
            
@@ -240,8 +240,8 @@ questions = [
             },
               {
                 "description": "beige",
-                "image": "/static/images/q4beige.png",
-                "type": "accesory"
+                "image": "/static/images/q3white.png",
+                "type": "hat"
             },
             {
                 "description": "navy",
