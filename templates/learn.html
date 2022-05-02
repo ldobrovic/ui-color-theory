@@ -10,150 +10,206 @@
 <script src="../static/jquery.imagemapster.js"></script>
 
 <div class="quiz-container">
-<div class="row">
-  {% if next == 1 %}
-  <div class="col-md-12  align-items-center ">
-    <div id="learn_header" class="quiz-header my-4 text-center ">{{data.text}}</div>
-    <div class=" text-center">
-      <a href="/learn/{{next}}" class="btn btn-primary ">Start Lesson</a>
+  <div class="row">
+    {% if next == 1 %}
+    <div class="col-md-12 align-items-center">
+      <div id="learn_header" class="text-color quiz-header my-4 text-center">
+        {{data.text}}
+      </div>
+      <div class="text-center">
+        <a href="/learn/{{next}}" class="btn btn-primary teach_button"
+          >Start Lesson</a
+        >
+      </div>
+    </div>
+    {% else %}
+    <div class="learn_top">
+      <div id="learn_header2" class="accenttext-color principle_num">
+        Principle {{data.id}}/5
+      </div>
+
+      <div class="text-color principle my-2">{{data.text}}</div>
     </div>
   </div>
-  {% else %}
-  <div class="learn_top">
-   
-    <div id="learn_header2" class="principle_num">
-      Principle {{data.id}}/5
-    </div>
-
-    <div class="principle my-2">{{data.text}}</div>
-  </div>
-  
-</div>
-{% endif %}
-
-
-{% if next == 2 or next == 4 or next == 5 or next == 6 %}
-
-<div class="row justify-content-center">
-
-{% set count = [1] %}
-
-{% for example in data.examples %}
-
-  <div class="col-md-4 col-sm-5 col-lg-4">
-   
-      {% if example.image.split('/')[3]=='p3wheel.png' %}
-            <img
-            src="{{example.image}}"
-            alt="{{example.description}}"
-            class="wheel img_wrap"
-            id="{{example.image.split('/')[3]}}"
-            height = "300px"
-            usemap="#colorwheel"
-            class = "learn_wheel"
-          />
-          
-          <map name="colorwheel" id="colorwheel">
-            <area  alt="yellow" title="yellow" href="#" coords="146,69,169,65,187,67,202,69,220,4,192,0,150,0,130,6" shape="poly">
-            <area  alt="lightOrange" title="lightOrange" href="#" coords="203,68,218,75,231,85,253,97,296,50,278,33,263,22,245,13,220,5" shape="poly">
-            <area  alt="orange" title="orange" href="#" coords="252,96,296,50,309,61,319,73,328,90,338,107,342,131,281,148,273,128,261,107" shape="poly">
-            <area  alt="redOrange" title="redOrange" href="#" coords="282,149,342,133,349,145,349,159,349,176,349,192,346,211,344,218,279,204,286,178" shape="poly">
-            <area  alt="red" title="red" href="#" coords="280,201,344,217,334,247,316,276,301,298,252,251,266,236,276,219" shape="poly">
-            <area  alt="deepRed" title="deepRed" href="#" coords="252,252,299,299,274,320,247,336,220,343,203,278,221,274,233,268,242,260" shape="poly">
-            <area  alt="purple" title="purple" href="#" coords="148,280,168,286,185,285,202,280,220,341,188,350,164,350,130,343" shape="poly">
-            <area  alt="navy" title="navy" href="#" coords="99,252,112,263,132,274,148,280,130,342,108,336,87,326,66,311,53,296" shape="poly">
-            <area  alt="blue" title="blue" href="#" coords="71,205,8,221,13,239,21,256,30,271,44,290,54,297,98,251,85,239,77,222" shape="poly">
-            <area  alt="lightBlue" title="lightBlue" href="#" coords="8,221,70,203,68,190,65,170,70,148,7,130,1,154,2,193,0,179,4,207" shape="poly">
-            <area  alt="green" title="green" href="#" coords="96,98,82,116,74,132,70,146,6,131,9,116,18,94,30,74,40,62,51,53" shape="poly">
-            <area  alt="lightGreen" title="lightGreen" href="#" coords="96,98,106,89,119,78,132,71,145,67,129,5,110,13,96,19,76,32,60,43,52,51" shape="poly">
-        </map>
-
-
-      {%else%}
-      <div class="text-center img_hover">
-            <img
-            src="{{example.image}}"
-            alt="{{example.description}}"
-            class="img_wrap img_tag"
-            id="{{count}}"
-          />
-          <p class="img_description" id="{{count}}">{{example.description}}</p>
-        </div>
-
-      {% if count.append(count.pop() + 1) %}{% endif %}
-
-      {%endif%}
-
-
-     
-    
-  </div>
-{% endfor %}
-
-{% else %}
+  {% endif %} {% if next == 2 or next == 4 or next == 5 or next == 6 %}
 
   <div class="row justify-content-center">
+    {% set count = [1] %} {% for example in data.examples %}
 
-  {% set count = [1] %}
-
-  {% for example in data.examples %}
-  
-  <div class="col-md-6 img_center img_hover">
+    <div class="col-md-4 col-sm-5 col-lg-4">
+      {% if example.image.split('/')[3]=='p3wheel.png' %}
       <img
         src="{{example.image}}"
         alt="{{example.description}}"
-        height = auto
-        width = 100%
-        class="img_wrap img_tag"
-        id = "{{count}}"
+        class="wheel img_wrap"
+        id="{{example.image.split('/')[3]}}"
+        height="300px"
+        usemap="#colorwheel"
+        class="learn_wheel"
       />
-      <p class="img_description" id="{{count}}">{{example.description}}</p>
-  </div>
-  {% if count.append(count.pop() + 1) %}{% endif %}
-  {% endfor %}
 
-  {% endif %}
+      <map name="colorwheel" id="colorwheel">
+        <area
+          alt="yellow"
+          title="yellow"
+          href="#"
+          coords="146,69,169,65,187,67,202,69,220,4,192,0,150,0,130,6"
+          shape="poly"
+        />
+        <area
+          alt="lightOrange"
+          title="lightOrange"
+          href="#"
+          coords="203,68,218,75,231,85,253,97,296,50,278,33,263,22,245,13,220,5"
+          shape="poly"
+        />
+        <area
+          alt="orange"
+          title="orange"
+          href="#"
+          coords="252,96,296,50,309,61,319,73,328,90,338,107,342,131,281,148,273,128,261,107"
+          shape="poly"
+        />
+        <area
+          alt="redOrange"
+          title="redOrange"
+          href="#"
+          coords="282,149,342,133,349,145,349,159,349,176,349,192,346,211,344,218,279,204,286,178"
+          shape="poly"
+        />
+        <area
+          alt="red"
+          title="red"
+          href="#"
+          coords="280,201,344,217,334,247,316,276,301,298,252,251,266,236,276,219"
+          shape="poly"
+        />
+        <area
+          alt="deepRed"
+          title="deepRed"
+          href="#"
+          coords="252,252,299,299,274,320,247,336,220,343,203,278,221,274,233,268,242,260"
+          shape="poly"
+        />
+        <area
+          alt="purple"
+          title="purple"
+          href="#"
+          coords="148,280,168,286,185,285,202,280,220,341,188,350,164,350,130,343"
+          shape="poly"
+        />
+        <area
+          alt="navy"
+          title="navy"
+          href="#"
+          coords="99,252,112,263,132,274,148,280,130,342,108,336,87,326,66,311,53,296"
+          shape="poly"
+        />
+        <area
+          alt="blue"
+          title="blue"
+          href="#"
+          coords="71,205,8,221,13,239,21,256,30,271,44,290,54,297,98,251,85,239,77,222"
+          shape="poly"
+        />
+        <area
+          alt="lightBlue"
+          title="lightBlue"
+          href="#"
+          coords="8,221,70,203,68,190,65,170,70,148,7,130,1,154,2,193,0,179,4,207"
+          shape="poly"
+        />
+        <area
+          alt="green"
+          title="green"
+          href="#"
+          coords="96,98,82,116,74,132,70,146,6,131,9,116,18,94,30,74,40,62,51,53"
+          shape="poly"
+        />
+        <area
+          alt="lightGreen"
+          title="lightGreen"
+          href="#"
+          coords="96,98,106,89,119,78,132,71,145,67,129,5,110,13,96,19,76,32,60,43,52,51"
+          shape="poly"
+        />
+      </map>
 
-  </div>
+      {%else%}
+      <div class="text-center img_hover">
+        <img
+          src="{{example.image}}"
+          alt="{{example.description}}"
+          class="img_wrap img_tag"
+          id="{{count}}"
+        />
+        <p class="text-color img_description" id="{{count}}">
+          {{example.description}}
+        </p>
+      </div>
 
-<div class="row my-4 learn_buttons">
-  {% if next == 6 %}
-  <div class="row my-4 learn_buttons">
-    <div>
-      <a
-        href="/learn/{{before}}"
-        class="btn btn-secondary  prev_margin"
-        >Previous Principle</a
-      >
+      {% if count.append(count.pop() + 1) %}{% endif %} {%endif%}
+    </div>
+    {% endfor %} {% else %}
+
+    <div class="row justify-content-center">
+      {% set count = [1] %} {% for example in data.examples %}
+
+      <div class="col-md-6 img_center img_hover">
+        <img
+          src="{{example.image}}"
+          alt="{{example.description}}"
+          height="auto"
+          width="100%"
+          class="img_wrap img_tag"
+          id="{{count}}"
+        />
+        <p class="text-color img_description" id="{{count}}">
+          {{example.description}}
+        </p>
+      </div>
+      {% if count.append(count.pop() + 1) %}{% endif %} {% endfor %} {% endif %}
     </div>
 
-    <div class>
-      <a href="/quiz/0" class="btn btn-secondary" id="next_btn"
-        >Take me to the quiz</a
-      >
+    <div class="row my-4 learn_buttons">
+      {% if next == 6 %}
+      <div class="row my-4 learn_buttons">
+        <div>
+          <a
+            href="/learn/{{before}}"
+            class="btn btn-secondary test_button prev_margin"
+            >Previous Principle</a
+          >
+        </div>
+
+        <div class>
+          <a href="/quiz/0" class="btn btn-primary teach_button" id="next_btn"
+            >Take me to the quiz</a
+          >
+        </div>
+      </div>
+      {% elif next == 1 %} {% else %}
+
+      <div class="row my-4 learn_buttons">
+        <div>
+          <a
+            href="/learn/{{before}}"
+            class="btn btn-secondary test_button prev_margin"
+            >Previous Principle</a
+          >
+        </div>
+
+        <div class>
+          <a
+            href="/learn/{{next}}"
+            class="btn btn-primary teach_button"
+            id="next_btn"
+            >Next Principle</a
+          >
+        </div>
+      </div>
+      {% endif %}
     </div>
   </div>
-  {% elif next == 1 %}
- 
-  {% else %}
-
-  <div class="row my-4 learn_buttons">
-    <div>
-      <a
-        href="/learn/{{before}}"
-        class="btn btn-secondary  prev_margin"
-        >Previous Principle</a
-      >
-    </div>
-
-    <div class>
-      <a href="/learn/{{next}}" class="btn btn-secondary" id="next_btn"
-        >Next Principle</a
-      >
-    </div>
-  </div>
-  {% endif %}
+  {% endblock %}
 </div>
-
-</div>
-{% endblock %}

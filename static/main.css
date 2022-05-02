@@ -1,5 +1,6 @@
 html {
-  background-color: #fce9d9;
+  /* background-color: #fce9d9; */
+  background-color: #faece1;
 }
 
 body {
@@ -7,7 +8,14 @@ body {
 }
 
 .navstyle {
-  background-color: lightsteelblue !important;
+  /* background-color: lightsteelblue !important; */
+  background-color: rgb(238, 237, 235) !important; 
+  /* color:#2e2f5e important;
+} */
+}
+.navbar-brand{
+  color:#2e2f5e !important;
+  font-weight: bolder !important;
 }
 
 .quiz-container {
@@ -32,7 +40,7 @@ body {
 }
 
 .principle{
-  font-size: xx-large;
+  font-size: x-large;
   font-weight: light;
   margin-bottom: 30px;
 }
@@ -310,12 +318,14 @@ body {
 }
 .white-box {
   border-radius: 15px;
-  border: 5px solid  #f9e1cd;
-  background-color: whitesmoke;
+  /* border: 2px solid #2e2f5e; */
+  border: 5px solid  #f9e1cd; 
+  background-color: #2e2f5e;
   height: 180px;
   width: 200px;
   text-align: center;
-  color: #2e2f5e ;
+  color: rgb(205, 204, 202);
+  /* color: rgb(76, 71, 71) ; */
   padding-top: 35px;
  
 }
@@ -337,11 +347,19 @@ body {
   color: #2e2f5e;
 }
 .teach_button{
-  background-color: #2e2f5e;
+  background-color: #393a77;
+  border-color:#393a77;
 }
 .test_button{
-  background-color: rgb(149, 146, 146);
+  /* background-color:  rgb(205, 204, 202); */
+  background-color: rgb(238, 237, 235);
   margin-top:20px;
+  color: #2e2f5e;
+  /* color: rgb(241, 239, 239); */
+}
+.accenttext-color{
+  color: rgb(108, 106, 106) ;
+  
 }
 .center {
   margin-left: 400px;
@@ -362,9 +380,9 @@ body {
   border-width: 0 !important;
 } 
 .container1 {
-  height: 700px;
+  height:auto;
   width: auto;
-  background-color: #fce9d9;
+  background-color: #faece1;
   /* background-color: rgb(247, 241, 241); */
 }
 .popup-overlay {
