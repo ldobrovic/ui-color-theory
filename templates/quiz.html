@@ -11,26 +11,37 @@
 <div class="quiz-container align-items-center row">
   {% if next == 1 or next == 7%}
   <div class="col">
-    <div class="quiz-header text-center my-4">{{data.text}}</div>
+    <div class="quiz-header bold text-center my-4 text-color">
+      {{data.text}}
+    </div>
     {% if next == 7%}
-    <div class="quiz-header text-center my-4" id="overall"></div>
+    <div
+      class="quiz-header bold text-center my-4 text-color"
+      id="overall"
+    ></div>
 
     {%endif%}
     <div class="quiz-buttons text-center">
       {% if next == 7%}
-      <a href="/quiz/{{next}}" class="btn btn-primary">Redo Quiz</a>
+      <a href="/quiz/{{next}}" class="btn btn-primary teach_button"
+        >Redo Quiz</a
+      >
       {%else%}
-      <a href="/quiz/{{next}}" class="btn btn-primary">Start Quiz</a>
+      <a href="/quiz/{{next}}" class="btn btn-primary teach_button"
+        >Start Quiz</a
+      >
       {%endif%}
-      <a href="/" class="btn btn-secondary">Home </a>
+      <a href="/" class="btn btn-secondary test_button">Home </a>
     </div>
   </div>
   {% else %}
   <div class="col">
     <div class="row d-block">
-      <div class="quiz-header my-2 font-weight-bold">Question {{data.id}}:</div>
+      <div class="principle_num my-2 font-weight-bold accenttext-color">
+        Question {{data.id}}:
+      </div>
 
-      <div class="quiz-header my-2">{{data.text}}</div>
+      <div class="quiz-header principle my-2 text-color">{{data.text}}</div>
     </div>
 
     <div class="row">
@@ -44,11 +55,11 @@
       <div class="quiz-buttons my-3">
         {% if next == 7 %}
 
-        <a href="/" class="btn btn-secondary">Home</a>
-        <a href="/learn/0" class="btn btn-secondary">Redo lesson</a>
-        <a href="/quiz/0" class="btn btn-secondary">Redo quiz</a>
+        <a href="/" class="btn btn-secondary test_button">Home</a>
+        <a href="/learn/0" class="btn btn-secondary test_button">Redo lesson</a>
+        <a href="/quiz/0" class="btn btn-primary teach_button">Redo quiz</a>
         {% elif next!=1 %}
-        <button id="submit" class="btn btn-primary">Submit</button>
+        <button id="submit" class="btn btn-primary teach_button">Submit</button>
 
         {% endif %} {% endif %}
         <div class="row">
@@ -154,7 +165,7 @@
           {%endif%}
         </div>
       </div>
-      <div class="disinlineblck" id="quiz-feedback"></div>
+      <div class="text-color disinlineblck" id="quiz-feedback"></div>
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
 html {
   /* background-color: #fce9d9; */
-  background-color: #faece1;
+  background-color:  #f7e2d3;
 }
 
 body {
@@ -192,6 +192,9 @@ body {
   font-size: 18;
   font-weight: bold;
 }
+.bold{
+  font-weight: bold;
+}
 .medium_bold{
   font-size: 18;
   font-weight: bold;
@@ -225,12 +228,13 @@ body {
   position: absolute;
   width: 300px;
   height: 400px;
+  
 }
 
 .head {
   width: 50px;
   height: 55px;
-  border: 5px solid black;
+  border: 5px solid rgb(108, 106, 106);
   border-radius: 50%;
   display: block;
   position: relative;
@@ -243,7 +247,7 @@ body {
 .torso {
   width: 6px;
   height: 120px;
-  border: 3px solid black;
+  border: 3px solid rgb(108, 106, 106);
   display: block;
   position: absolute;
   top: 8px;
@@ -253,7 +257,7 @@ body {
 .leftleg {
   width: 6px;
   height: 130px;
-  border: 3px solid black;
+  border: 3px solid rgb(108, 106, 106);
   display: block;
   position: absolute;
   top: 8px;
@@ -265,7 +269,7 @@ body {
 .rightleg {
   width: 6px;
   height: 130px;
-  border: 3px solid black;
+  border: 3px solid rgb(108, 106, 106);
   display: block;
   position: absolute;
   top: 8px;
@@ -277,7 +281,7 @@ body {
 .leftarm {
   width: 100px;
   height: 6px;
-  border: 3px solid black;
+  border: 3px solid rgb(108, 106, 106);
   display: block;
   position: absolute;
   top: 45px;
@@ -289,7 +293,7 @@ body {
 .rightarm {
   width: 100px;
   height: 6px;
-  border: 3px solid black;
+  border: 3px solid rgb(108, 106, 106);
   display: block;
   position: absolute;
   top: 45px;
@@ -388,7 +392,7 @@ body {
 .container1 {
   height:auto;
   width: auto;
-  background-color: #faece1;
+  background-color: #f7e2d3;
   /* background-color: rgb(247, 241, 241); */
 }
 .quiz-wheel {
