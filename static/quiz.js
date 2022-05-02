@@ -1,6 +1,7 @@
  let submission = []
  let selected = []
 
+
  function color_grid(colors){
 
      $.each(colors, function(index,value){
@@ -42,6 +43,7 @@
  function checkColorAnswers(){
      let answers = data.answer
      if (next==3){
+        
         for (let i=0; i<answers.length; i++) {
             if (submission.includes(answers[i][0])) {
                 if (submission.includes(answers[i][1])) {
@@ -50,21 +52,21 @@
             }
         }
      } else {
-     if (submission === answers){
-         return true;
-     }
-     if(submission ==null||answers==null){
-         return false;
-     }
-     if(submission.length!==answers.length){
-         return false;
-     }
-     submission.sort()
-     answers.sort()
-     for(let i = 0;i<answers.length; ++i){
-         if(answers[i]!==submission[i]) return false;
-     }
-     return true;
+        if (submission === answers){
+            return true;
+        }
+        if(submission ==null||answers==null){
+            return false;
+        }
+        if(submission.length!==answers.length){
+            return false;
+        }
+        submission.sort()
+        answers.sort()
+        for(let i = 0;i<answers.length; ++i){
+            if(answers[i]!==submission[i]) return false;
+        }
+        return true;
     }
     return false
     
@@ -130,7 +132,12 @@ function outfit_grid(images){
         if(index<3){
             img.addClass("height-100")
         } else {
-            img.addClass("height-150")
+            if(next==5){
+                img.addClass("height-auto")
+            } else {
+                img.addClass("height-150")
+
+            }
         }
         img.draggable({
             cursor: "crosshair",
@@ -254,7 +261,7 @@ function outfit_grid(images){
     }  else {
         let pair1 = wrong_colors[0]
         let pair2 = wrong_colors[1]
-        let pair3 = wrong_colors[3]
+        let pair3 = wrong_colors[2]
 
        
         if(submission.includes(pair1[0])){
@@ -337,8 +344,9 @@ function img_grid(images){
     })
  }
  
-
+/*****************DOCUMENT READY*************************88*/ 
  $(document).ready(function(){
+     
     if(next==2){
         color_grid(data.images)
         $('#submit').click(function(e){
@@ -348,6 +356,7 @@ function img_grid(images){
                 ans.text('Good Job! You got all correct.')
                 save_answers(submission,1)
             } else if(correct>0){
+                
                 ans.text('Nice Try! You got '+correct+' correct. Right answers are in green!')
                 save_answers(submission,0)
             } else {
@@ -357,32 +366,45 @@ function img_grid(images){
             }
            $('#color-grid').append(ans)
            $('#submit').remove()
-           let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font submit-margin teach_button btn-primary mx-1">')
+           let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font  teach_button btn-primary mx-1">')
            nextQ.text('Next Question')
+          
+
            $('.quiz-buttons').append(nextQ)
+         
+          
         })
 
     } else if(next==3){
         color_grid(data.images)
         $('#submit').click(function(e){
-            let ans = $('<div class="col-12 text-font text-color feedback">')
+            
+            let ans = $('#feedback')
             let isCorrect = checkColorAnswers()
 
             if(isCorrect){
+                ans.removeClass('col-8').addClass('col-12').addClass('text-center')
                 ans.text('Good Job!')
                 save_answers(submission,1)
-            } else {
+            } else if(submission.length<1) {
+                ans.text('Please select some colors!')
+                 $('#color-grid').append(ans)
+                return
+            }
+            else {
                
                 ans.text('Try reviewing your colorwheel below! Possible pairings are found next to each other on the color wheel, such as blue and purple, red and orange, or yellow and green.')
-                $('#popup-content').addClass("active");
+                $('#popup-content').addClass("active").addClass('ml-4')
+                ans.addClass('text-left').addClass('mr-4')
+                submitted=true
                 save_answers(submission,0)
             }
             
             highlightResults(isCorrect)
-           $('#color-grid').append(ans)
            $('#submit').remove()
-           let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font submit-margin teach_button btn-primary mx-1">')
+           let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font  teach_button btn-primary mx-1">')
            nextQ.text('Next Question')
+          
            $('.quiz-buttons').append(nextQ)
         })
 
@@ -393,7 +415,7 @@ function img_grid(images){
         makeOutfit()
         $('#submit').click(function(e){
             $('.feedback').remove()
-            let ans = $('<div class="col-12 text-font text-color submit-margin feedback">')
+            let ans = $('<div class="col-12 text-font text-color  feedback">')
             if (submission.length<2){
                 ans.text('Please make your outfit!')
                 $('#quiz-feedback').append(ans)
@@ -422,10 +444,12 @@ function img_grid(images){
                 }
                $('#quiz-feedback').append(ans)
                $('#submit').remove()
-               let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font submit-margin teach_button btn-primary mx-1">')
+               let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font  teach_button btn-primary mx-1">')
                nextQ.text('Next Question')
+               
+
                $('.quiz-buttons').append(nextQ)
-            $('.draggable').draggable( "disable" )
+             $('.draggable').draggable( "disable" )
 
             }
             
@@ -442,8 +466,10 @@ function img_grid(images){
                 $(".q5_highlight").addClass("q5_correct")
                 ans.text("Correct! Any outfit you like is best :)")
                 $('#submit').remove()
-                let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font submit-margin teach_button btn-primary mx-1">')
+                let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font  teach_button btn-primary mx-1">')
                 nextQ.text('View Results')
+               
+
                 $('.quiz-buttons').append(nextQ)
                 save_answers(submission,1)
             }
@@ -460,6 +486,8 @@ function img_grid(images){
         let overall = questions['question1']['overall'] + questions['question2']['overall']  + questions['question3']['overall']  +questions['question4']['overall']  + questions['question5']['overall'] 
         $('#overall').text("You scored "+ overall+"/5")
     }
+
+    
 
    
 

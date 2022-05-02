@@ -45,31 +45,41 @@
     </div>
 
     <div class="row">
-      <div class="row" id="color-grid"></div>
+      <div class="row" id="color-grid">
+       
+       
+
+      </div>
       {% if next>3 %}
       <div class="row" id="drop-grid"></div>
       {%endif%}
+     
     </div>
 
-    <div class="row">
-      <div class="quiz-buttons my-3">
+      <div class="quiz-buttons row my-3 justify-content-center ">
         {% if next == 7 %}
 
         <a href="/" class="btn btn-secondary test_button">Home</a>
         <a href="/learn/0" class="btn btn-secondary test_button">Redo lesson</a>
         <a href="/quiz/0" class="btn btn-primary teach_button">Redo quiz</a>
         {% elif next!=1 %}
-        <button id="submit" class="btn btn-primary teach_button submit-margin">
+        <button id="submit" class="btn btn-primary teach_button ">
           Submit
         </button>
 
         {% endif %} {% endif %}
-        <div class="row">
-          {% if next==3 %}
+       
+      </div>
+
+      <div class="text-color row text-center" id="quiz-feedback">
+        {% if next==3 %}
+        <div id="feedback" class="col-8 text-font text-color feedback my-3"></div>
+        <div id="wheel" class="col my-3 justify-content-center">
+        
           <div
             data-role="popup"
             id="popup-content"
-            class="center welcome_img img_hover"
+            class="center "
           >
             <img
               src="/static/images/p3wheel.png"
@@ -164,10 +174,9 @@
               />
             </map>
           </div>
-          {%endif%}
         </div>
+          {%endif%}
       </div>
-      <div class="text-color disinlineblck" id="quiz-feedback"></div>
     </div>
   </div>
 </div>

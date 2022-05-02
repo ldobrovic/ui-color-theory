@@ -75,6 +75,10 @@ body {
 .height-150 {
   height: 150px;
 }
+.height-auto {
+  height: auto;
+width: 100px;
+}
 
 .ui-draggable-dragging {
   z-index: 999999;
@@ -96,6 +100,7 @@ body {
 #bottom {
   min-height: 150px;
   height: fit-content;
+  min-width: max-content;
 }
 #top {
   min-height: 120px;
@@ -363,7 +368,6 @@ body {
 .test_button{
   /* background-color:  rgb(205, 204, 202); */
   background-color: rgb(238, 237, 235);
-  margin-top:20px;
   color: #2e2f5e;
   /* color: rgb(241, 239, 239); */
 }
@@ -371,13 +375,10 @@ body {
   color: rgb(108, 106, 106) ;
   
 }
-.center {
-  margin-left: 400px;
-}
+
 #welcome_header {
   text-align: center;
   font-weight: bold;
-  font-size: 40;
   margin-top: 60px;
   margin-bottom: 15px;
   color: #2e2f5e;

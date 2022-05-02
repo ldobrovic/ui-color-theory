@@ -1,13 +1,14 @@
 {% extends "layout.html" %} {% block content %}
-<script src="../static/learn.js"></script>
-<!-- <script src="https://projects.davidlynch.org/maphilight/jquery.maphilight.js"></script> -->
+<script src="../static/welcome.js"></script>
 <script src="../static/jquery.imagemapster.js"></script>
 
+
+<div class="quiz-container justify-content-center align-items-center text-center  ">
 <div id="welcome_header" class="quiz-header text-center my-4 py-1">
   Welcome to Color Theory for Style
   <!-- <div>Never go out of style with these principles.</div> -->
 </div>
-<div class="center welcome_img">
+<div class="my-4 d-inline-block">
   <img
     src="/static/images/p3wheel.png"
     alt="Color Wheel"
@@ -101,8 +102,8 @@
     />
   </map>
 </div>
-<br />
-<div class="welcome-parent-div">
+
+<div class="welcome-parent-div my-4">
   <div class="disinlineblck welcome-child-div white-box">
     <p>Learn the basics of color theory. Never go out of style</p>
     <a href="/learn/0" class="text-font btn btn-primary teach_button"
@@ -112,10 +113,11 @@
 
   <div class="disinlineblck welcome-child-div white-box">
     <p>You've got Style? Show Off</p>
-    <a href="/quiz/0" class="text-font btn btn-secondary test_button"
+    <a href="/quiz/0" class="text-font mt-4 btn btn-secondary test_button"
       >Test Me</a
     >
   </div>
+</div>
 </div>
 
 {% endblock %}
