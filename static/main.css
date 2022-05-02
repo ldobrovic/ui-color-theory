@@ -1,12 +1,48 @@
+html {
+  /* background-color: #fce9d9; */
+  background-color: #faece1;
+}
+
 body {
   font-family: "Trebuchet MS";
+}
+
+.navstyle {
+  /* background-color: lightsteelblue !important; */
+  background-color: rgb(238, 237, 235) !important; 
+  /* color:#2e2f5e important;
+} */
+}
+.navbar-brand{
+  color:#2e2f5e !important;
+  font-weight: bolder !important;
 }
 
 .quiz-container {
   padding: 1em;
 }
-.principle{
+
+.learn_buttons {
+  /* margin-top: 60px; */
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.learn_top {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.principle_num{
   font-size: large;
+  font-weight: 100;
+  margin-bottom: -10px;
+}
+
+.principle{
+  font-size: x-large;
+  font-weight: light;
+  margin-bottom: 30px;
 }
 
 .quiz-header {
@@ -87,58 +123,60 @@ body {
   padding-right: 55px;
   padding-left: 30px;
 }
-.img_wrap {
-  max-height: 350px;
-  /* opacity: 0.3; */
+
+.img_hover {
+  position: relative;
 }
+
+.img_wrap {
+  max-height: 400px;
+  position: relative;
+  display: block;
+  opacity: 0.4;
+
+  margin: auto;
+
+  transition: opacity 0.3s linear, visibility 0.3s linear;
+}
+
 
 .img_description {
   position: absolute;
-  top: 10;
-  bottom: 0;
-  left: -10;
-  right: 0;
-  /* background: rgba(213, 224, 231, 0.72); */
-  /* color: brown; */
-  background: rgba(235, 235, 235, 0.72);
+  /* top: 100%; */
+  /* left: 100%; */
+  width: 100%;
+  background: rgba(235, 235, 235, 0.9);
   color: black;
   visibility: hidden;
-  opacity: 0;
 
   /* transition effect. not necessary */
-  transition: opacity 0.2s, visibility 0.2s;
+  /* transition: opacity 0.3s linear, visibility 0.3s linear; */
 }
 
-.img_hover, .wheel{
+.learn_wheel {
+  display: inline-block;
+  padding-top: 100px;
+}
+
+.full_opacity{
+  opacity: 1.0 !important;
+}
+
+.wheel{
   opacity: 0.4;
 }
 
-.img_hover:hover {
-  opacity: 1;
+.img_hover {
+  justify-content: center;
+  text-align: center;
 }
 
 .img_hover:hover .img_description {
   visibility: visible;
   opacity: 1;
-}
 
-/* .img_hover:hover .img_wrap{
-  opacity: 1;
-} */
-
-/* .img_wrap:hover + .img_description {
-  visibility: visible;
-  opacity: 1;
+  transition: all 0.3s ease-in-out;
 }
-.img_description:hover {
-  opacity: 1;
-}
-.img_description:hover .img_wrap{
-  opacity: 1;
-}
-.img_wrap:hover {
-  opacity: 1;
-} */
 
 .prev_margin {
   margin-right: 780px;
@@ -286,12 +324,14 @@ body {
 }
 .white-box {
   border-radius: 15px;
-  border: 5px solid  #f9e1cd;
-  background-color: whitesmoke;
+  /* border: 2px solid #2e2f5e; */
+  border: 5px solid  #f9e1cd; 
+  background-color: #2e2f5e;
   height: 180px;
   width: 200px;
   text-align: center;
-  color: #2e2f5e ;
+  color: rgb(205, 204, 202);
+  /* color: rgb(76, 71, 71) ; */
   padding-top: 35px;
  
 }
@@ -313,11 +353,19 @@ body {
   color: #2e2f5e;
 }
 .teach_button{
-  background-color: #2e2f5e;
+  background-color: #393a77;
+  border-color:#393a77;
 }
 .test_button{
-  background-color: rgb(149, 146, 146);
+  /* background-color:  rgb(205, 204, 202); */
+  background-color: rgb(238, 237, 235);
   margin-top:20px;
+  color: #2e2f5e;
+  /* color: rgb(241, 239, 239); */
+}
+.accenttext-color{
+  color: rgb(108, 106, 106) ;
+  
 }
 .center {
   margin-left: 400px;
@@ -338,9 +386,9 @@ body {
   border-width: 0 !important;
 } 
 .container1 {
-  height: 700px;
+  height:auto;
   width: auto;
-  background-color: #fce9d9;
+  background-color: #faece1;
   /* background-color: rgb(247, 241, 241); */
 }
 .quiz-wheel {
@@ -353,3 +401,4 @@ body {
   #popup-content.active {
     visibility: visible;
   }
+
