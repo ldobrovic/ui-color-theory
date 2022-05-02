@@ -1,5 +1,7 @@
 {% extends "layout.html" %} {% block content %}
 <script src="../static/learn.js"></script>
+<script src="https://kit.fontawesome.com/b2099ef368.js" crossorigin="anonymous"></script>
+<!-- <script src="https://kit.fontawesome.com/31ac4a49cd.js" crossorigin="anonymous"></script> -->
 <!-- <script src="https://projects.davidlynch.org/maphilight/jquery.maphilight.js"></script> -->
 <script src="../static/jquery.imagemapster.js"></script>
 <script>
@@ -8,10 +10,42 @@
 </script>
 <script src="../static/quiz.js"></script>
 
-<div class="quiz-container align-items-center row">
+
+
+<div class="quiz-container align-items-center justify-content-center row d-block">
+
+  <div class="row my-4 mx-auto accenttext-color text-center d-block">
+    <div class="col">
+    <span id="icon1" class="fa-stack small mx-4 ">
+      <i class="fa-solid fa-shirt fa-stack-2x " ></i>
+      <i class="fa-solid fa-1 fa-inverse fa-stack-1x" data-fa-transform="shrink-2"></i>
+    </span>
+    <span  id="icon2" class="fa-stack small mx-4">
+      <i class="fa-solid fa-shirt fa-stack-2x " ></i>
+      <i class="fa-solid fa-2 fa-inverse fa-stack-1x" data-fa-transform="shrink-2"></i>
+    </span>
+    <span  id="icon3" class="fa-stack small mx-4">
+      <i class="fa-solid fa-shirt fa-stack-2x " ></i>
+      <i class="fa-solid fa-3 fa-inverse fa-stack-1x" data-fa-transform="shrink-2"></i>
+    </span>
+    <span  id="icon4" class="fa-stack small mx-4">
+      <i class="fa-solid fa-shirt fa-stack-2x " ></i>
+      <i class="fa-solid fa-4 fa-inverse fa-stack-1x" data-fa-transform="shrink-2"></i>
+    </span>
+    <span  id="icon5" class="fa-stack small mx-4">
+      <i class="fa-solid fa-shirt fa-stack-2x " ></i>
+      <i class="fa-solid fa-5 fa-inverse fa-stack-1x" data-fa-transform="shrink-2"></i>
+    </span>
+  </div>
+
+   
+  </div>
+  <div class="row">
+
   {% if next == 1 or next == 7%}
   <div class="col">
     <div class="quiz-header bold text-center my-4 text-color">
+      
       {{data.text}}
     </div>
     {% if next == 7%}

@@ -346,6 +346,26 @@ function img_grid(images){
  
 /*****************DOCUMENT READY*************************88*/ 
  $(document).ready(function(){
+     if(next==2){
+         $('#icon1').addClass('current')
+
+     } else if(next==3){
+        $('#icon2').addClass('current')
+     }else if(next==4){
+        $('#icon3').addClass('current')
+
+     }else if(next==5){
+        $('#icon4').addClass('current')
+
+     }else if(next==6){
+        $('#icon5').addClass('current')
+
+     } else if(next==7){
+        $('.fa-stack').addClass('current')
+
+
+
+     }
      
     if(next==2){
         color_grid(data.images)

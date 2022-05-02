@@ -3,24 +3,34 @@
 
 $(document).ready(function(){
 
-    num_images = document.getElementsByClassName('img_tag').length
+    num_images =$('.img_tag').length
     a = Array(num_images).fill(0)
-    descriptions = document.getElementsByClassName('img_description');
+    descriptions = $('.img_description');
 
     for (let i=0; i<descriptions.length; i++) {
-        console.log(descriptions[i]);
-        id = $(descriptions[i]).attr("id")[1];
 
-        images = document.getElementsByClassName('img_tag');
+        let id = $(descriptions[i]).attr("id")[1];
+
+        images = $('.img_tag');
         for (let j=0; j<images.length; j++) {
-            img_id = $(images[j]).attr("id")[1];
+        
+            let img_id = $(images[j]).attr("id")[1];
+          
             if (id == img_id) {
+
                 $(descriptions[i]).width($(images[j]).width());
-                left_marg = $(images[j]).css("margin-left");
+
+                let left_marg = $(images[j]).css("margin-left");
                 left_marg = parseFloat(left_marg.slice(0, -1));
-                console.log(left_marg);
+
+
+                let top = Math.abs( $(images[j]).height() - $(descriptions[i]).height())
+                
+                console.log("top",top)
+                console.log("leftm",left_marg)
+
                 $(descriptions[i]).css(
-                    "top", $(images[j]).height() - $(descriptions[i]).height()
+                    "top", top
                 )
                 $(descriptions[i]).css(
                     "left", left_marg
