@@ -1,12 +1,48 @@
+html {
+  /* background-color: #fce9d9; */
+  background-color:  #f7e2d3;
+}
+
 body {
   font-family: "Trebuchet MS";
+}
+
+.navstyle {
+  /* background-color: lightsteelblue !important; */
+  background-color: rgb(238, 237, 235) !important; 
+  /* color:#2e2f5e important;
+} */
+}
+.navbar-brand{
+  color:#2e2f5e !important;
+  font-weight: bolder !important;
 }
 
 .quiz-container {
   padding: 1em;
 }
-.principle{
+
+.learn_buttons {
+  /* margin-top: 60px; */
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.learn_top {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.principle_num{
   font-size: large;
+  font-weight: 100;
+  margin-bottom: -10px;
+}
+
+.principle{
+  font-size: x-large;
+  font-weight: light;
+  margin-bottom: 30px;
 }
 
 .quiz-header {
@@ -39,6 +75,10 @@ body {
 .height-150 {
   height: 150px;
 }
+.height-auto {
+  height: auto;
+width: 100px;
+}
 
 .ui-draggable-dragging {
   z-index: 999999;
@@ -60,6 +100,7 @@ body {
 #bottom {
   min-height: 150px;
   height: fit-content;
+  min-width: max-content;
 }
 #top {
   min-height: 120px;
@@ -87,61 +128,60 @@ body {
   padding-right: 55px;
   padding-left: 30px;
 }
-.img_wrap {
-  max-height: 350px;
-  /* opacity: 0.3; */
+
+.img_hover {
+  position: relative;
 }
+
+.img_wrap {
+  max-height: 400px;
+  position: relative;
+  display: block;
+  opacity: 0.4;
+
+  margin: auto;
+
+  transition: opacity 0.3s linear, visibility 0.3s linear;
+}
+
 
 .img_description {
   position: absolute;
-  top: 10;
-  bottom: 0;
-  left: -10;
-  right: 0;
-  /* background: rgba(213, 224, 231, 0.72); */
-  /* color: brown; */
-  background: rgba(235, 235, 235, 0.72);
+  /* top: 100%; */
+  /* left: 100%; */
+  width: 100%;
+  background: rgba(235, 235, 235, 0.9);
   color: black;
   visibility: hidden;
-  opacity: 0;
 
   /* transition effect. not necessary */
-  transition: opacity 0.2s, visibility 0.2s;
+  /* transition: opacity 0.3s linear, visibility 0.3s linear; */
 }
 
-.img_hover, .wheel{
+.learn_wheel {
+  display: inline-block;
+  padding-top: 100px;
+}
+
+.full_opacity{
+  opacity: 1.0 !important;
+}
+
+.wheel{
   opacity: 0.4;
 }
 
-.img_hover:hover {
-  opacity: 1;
+.img_hover {
+  justify-content: center;
+  text-align: center;
 }
 
 .img_hover:hover .img_description {
   visibility: visible;
   opacity: 1;
+
+  transition: all 0.3s ease-in-out;
 }
-
-/* .img_hover:hover .img_wrap{
-  opacity: 1;
-} */
-
-/* .img_wrap:hover + .img_description {
-  visibility: visible;
-  opacity: 1;
-}
-
-.img_description:hover {
-  opacity: 1;
-}
-
-.img_description:hover .img_wrap{
-  opacity: 1;
-}
-
-.img_wrap:hover {
-  opacity: 1;
-} */
 
 .prev_margin {
   margin-right: 780px;
@@ -154,6 +194,13 @@ body {
   display: inline-block;
 }
 .big_bold {
+  font-size: 18;
+  font-weight: bold;
+}
+.bold{
+  font-weight: bold;
+}
+.medium_bold{
   font-size: 18;
   font-weight: bold;
 }
@@ -186,12 +233,13 @@ body {
   position: absolute;
   width: 300px;
   height: 400px;
+  
 }
 
 .head {
   width: 50px;
   height: 55px;
-  border: 5px solid black;
+  border: 5px solid rgb(108, 106, 106);
   border-radius: 50%;
   display: block;
   position: relative;
@@ -204,20 +252,20 @@ body {
 .torso {
   width: 6px;
   height: 120px;
-  border: 3px solid black;
+  border: 3px solid rgb(108, 106, 106);
   display: block;
   position: absolute;
-  top: 5px;
+  top: 8px;
   left: 170px;
 }
 
 .leftleg {
   width: 6px;
   height: 130px;
-  border: 3px solid black;
+  border: 3px solid rgb(108, 106, 106);
   display: block;
   position: absolute;
-  top: 5px;
+  top: 8px;
   left: 169px;
   transform: rotate(18deg);
   transform-origin: top;
@@ -226,10 +274,10 @@ body {
 .rightleg {
   width: 6px;
   height: 130px;
-  border: 3px solid black;
+  border: 3px solid rgb(108, 106, 106);
   display: block;
   position: absolute;
-  top: 5px;
+  top: 8px;
   left: 171px;
   transform: rotate(-18deg);
   transform-origin: top;
@@ -238,11 +286,11 @@ body {
 .leftarm {
   width: 100px;
   height: 6px;
-  border: 3px solid black;
+  border: 3px solid rgb(108, 106, 106);
   display: block;
   position: absolute;
-  top: 36px;
-  left: 71px;
+  top: 45px;
+  left: 72px;
   transform: rotate(-45deg);
   transform-origin: 100%;
 }
@@ -250,23 +298,29 @@ body {
 .rightarm {
   width: 100px;
   height: 6px;
-  border: 3px solid black;
+  border: 3px solid rgb(108, 106, 106);
   display: block;
   position: absolute;
-  top: 36px;
-  left: 175px;
+  top: 45px;
+  left: 174px;
   transform: rotate(45deg);
   transform-origin: 0%;
 }
 .pants {
-  position: absolute;
-  top: 145px;
+  position: relative;
+  top: -25px;
   left: 130px;
 }
 .topp {
   position: relative;
-  top: 5px;
+  top: 0px;
   left: 130px;
+}
+.hatt{
+  position: relative;
+  top: 0px;
+  left: 130px;
+
 }
 .parent {
   position: relative;
@@ -276,4 +330,88 @@ body {
 }
 .full_opacity {
   opacity: 1 !important;
+}
+.white-box {
+  border-radius: 15px;
+  /* border: 2px solid #2e2f5e; */
+  border: 5px solid  #f9e1cd; 
+  background-color: #2e2f5e;
+  height: 180px;
+  width: 200px;
+  text-align: center;
+  color: rgb(205, 204, 202);
+  /* color: rgb(76, 71, 71) ; */
+  padding-top: 35px;
+ 
+}
+.welcome-parent-div {
+  margin: 1rem;
+  /* padding: 2rem 2rem; */
+  text-align: center;
+}
+.welcome-child-div {
+  display: inline-block;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+}
+.img_resize {
+  width: 300px;
+  height: auto;
+}
+.text-color {
+  color: #2e2f5e;
+}
+.teach_button{
+  background-color: #393a77;
+  border-color:#393a77;
+}
+.test_button{
+  /* background-color:  rgb(205, 204, 202); */
+  background-color: rgb(238, 237, 235);
+  color: #2e2f5e;
+  /* color: rgb(241, 239, 239); */
+}
+.accenttext-color{
+  color: rgb(108, 106, 106) ;
+  
+}
+
+#welcome_header {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 60px;
+  margin-bottom: 15px;
+  color: #2e2f5e;
+  /* color: rgb(5, 19, 83); */
+}
+
+.navbar-light {
+  color: #2e2f5e !important;
+  border: none !important;
+  border-width: 0 !important;
+} 
+.container1 {
+  height:auto;
+  width: auto;
+  background-color: #f7e2d3;
+  /* background-color: rgb(247, 241, 241); */
+}
+.quiz-wheel {
+ width: 160px;
+ height: auto;
+}
+  #popup-content {
+  visibility: hidden;
+  }
+  #popup-content.active {
+    visibility: visible;
+  }
+  .submit-margin{
+    margin-top: 20px;
+    margin-left: 500px;
+  }
+
+.current{
+  color: #2e2f5e !important;
+
 }

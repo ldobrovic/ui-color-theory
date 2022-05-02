@@ -32,11 +32,11 @@ user_answers = {
 lessons = [
     {
         "id": "0",
-        "text": "Advance through the slides to learn principles. Hover over the images to learn more!",
+        "text": "Advance through the lessons to learn the principles of color theory for fashion. On each page, hover over the images to learn more.",
     },
     {
         "id": "1",
-        "text": "The neutral colors are black, white, grey, navy, beige, brown, and olive green. Neutrals make life easy!",
+        "text": "The neutral colors are black, white, grey, navy, beige, brown, and olive green. Neutrals make life easy and all go well together.",
         "examples": [
             {
                 "description": "British designer Phoebe Philo combines the neutrals beige, black, and white into a simple yet put-together look.",
@@ -69,7 +69,7 @@ lessons = [
     },
     {
         "id": "3",
-        "text": "On a color wheel, colors next to each other (analogous colors) go well together! ",
+        "text": "On a color wheel, colors next to each other are called analogous colors. Analogous colors go very well together.",
         "examples": [
             {
                 "description": "Color wheel",
@@ -87,7 +87,7 @@ lessons = [
     },
     {
         "id": "4",
-        "text": "When in doubt, pick a few neutrals and a hint of color!",
+        "text": "When in doubt, pick a few neutral colors and a hint of a bright non-neutral.",
         "examples": [
             {
                 "description": "This outfit consits mostly of the neutrals beige and white, but adds a pop of pink footwear.",
@@ -105,7 +105,7 @@ lessons = [
     },
     {
         "id": "5",
-        "text": "Never be afraid of color",
+        "text": "Never be afraid of color.",
         "examples": [
             {
                 "description": "Rapper A$AP Rocky sports a daring pink Loewe tuxedo with a classic white shirt and sneakers at the 2019 pre-Grammys gala.",
@@ -151,7 +151,7 @@ questions = [
     },
     {
         "id": "2",
-        "text": "Identify an analogous color pair",
+        "text": "Identify one analogous color pair",
         "images": [
             "#00ba00", #green
             "#ff0000", #red
@@ -163,7 +163,7 @@ questions = [
             "#980ec2", #purple
         ],
          "answer":[
-             ["#00ba00", "#fffa00",], #green and yellow
+            ["#00ba00", "#fffa00",], #green and yellow
              ["#00ba00", "#0025c2"], #green and blue
              ["#ff0000", "#ffa100"], #red and orange
              ["#ff0000","#980ec2" ], #red and purple
@@ -180,7 +180,7 @@ questions = [
            
             {
                 "description": "white",
-                "image": "/static/images/q3white.png",
+                "image": "/static/images/q4beige.png",
                 "type": "accesory"
             },
              {
@@ -230,7 +230,7 @@ questions = [
             {
                 "description": "red",
                 "image": "/static/images/q4red.png",
-                 "type": "accesory"
+                 "type": "hat"
             },
           
            
@@ -246,8 +246,8 @@ questions = [
             },
               {
                 "description": "beige",
-                "image": "/static/images/q4beige.png",
-                "type": "accesory"
+                "image": "/static/images/q3white.png",
+                "type": "hat"
             },
             {
                 "description": "navy",
