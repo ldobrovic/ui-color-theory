@@ -357,7 +357,7 @@ function img_grid(images){
             }
            $('#color-grid').append(ans)
            $('#submit').remove()
-           let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font teach_button btn-primary mx-1">')
+           let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font submit-margin teach_button btn-primary mx-1">')
            nextQ.text('Next Question')
            $('.quiz-buttons').append(nextQ)
         })
@@ -381,7 +381,7 @@ function img_grid(images){
             highlightResults(isCorrect)
            $('#color-grid').append(ans)
            $('#submit').remove()
-           let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font teach_button btn-primary mx-1">')
+           let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font submit-margin teach_button btn-primary mx-1">')
            nextQ.text('Next Question')
            $('.quiz-buttons').append(nextQ)
         })
@@ -393,7 +393,7 @@ function img_grid(images){
         makeOutfit()
         $('#submit').click(function(e){
             $('.feedback').remove()
-            let ans = $('<div class="col-12 text-font text-color feedback">')
+            let ans = $('<div class="col-12 text-font text-color submit-margin feedback">')
             if (submission.length<2){
                 ans.text('Please make your outfit!')
                 $('#quiz-feedback').append(ans)
@@ -422,7 +422,7 @@ function img_grid(images){
                 }
                $('#quiz-feedback').append(ans)
                $('#submit').remove()
-               let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font teach_button btn-primary mx-1">')
+               let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font submit-margin teach_button btn-primary mx-1">')
                nextQ.text('Next Question')
                $('.quiz-buttons').append(nextQ)
             $('.draggable').draggable( "disable" )
@@ -442,7 +442,7 @@ function img_grid(images){
                 $(".q5_highlight").addClass("q5_correct")
                 ans.text("Correct! Any outfit you like is best :)")
                 $('#submit').remove()
-                let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font teach_button btn-primary mx-1">')
+                let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font submit-margin teach_button btn-primary mx-1">')
                 nextQ.text('View Results')
                 $('.quiz-buttons').append(nextQ)
                 save_answers(submission,1)

@@ -405,4 +405,8 @@ body {
   #popup-content.active {
     visibility: visible;
   }
+  .submit-margin{
+    margin-top: 20px;
+    margin-left: 500px;
+  }
 
