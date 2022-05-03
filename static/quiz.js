@@ -291,6 +291,27 @@ function outfit_grid(images){
   
 
  }
+
+ function showCorrectOutfit(next) {
+
+    if (next == 4) {
+        img_src = '/static/images/q3solution.png'
+        feedback = "An example outfit solution is found to the right. The bright, eye-catching 'parakeet green' sweater is balanced out by the more subdued neutrals of the black pants and beige tote bag."
+    } else {
+        img_src = '/static/images/q4solution.png'
+        feedback = "An example outfit solution is found to the right. This outfit features the analogous color pairing of the red hat and purple sweater, grounded by the neutral navy pants. In fact, red-purple-navy form an analogous color triple!"
+    }
+
+    let two = $("<div class='row'><div class='col-3'></div><div class='col-3 feedback_pad'><p>" + feedback + "</p></div><div class='col-1'><img src=" +img_src+ " class='correct_outfit' alt='example solution for this question'></img></div><div class='col-5'></div></div>")
+
+    $('#quiz-feedback').append(two)
+
+
+
+    console.log(next);
+
+
+ }
 /************************question 5****************************/
 function img_grid(images){
     $.each(images, function(index,value){
@@ -435,7 +456,8 @@ function img_grid(images){
         makeOutfit()
         $('#submit').click(function(e){
             $('.feedback').remove()
-            let ans = $('<div class="col-12 text-font text-color  feedback">')
+            let ans = $('<div class="col-12 text-font text-color feedback bottom_marg">')
+            isCorrect = true
             if (submission.length<2){
                 ans.text('Please make your outfit!')
                 $('#quiz-feedback').append(ans)
@@ -451,25 +473,22 @@ function img_grid(images){
                     save_answers(submission,1)
     
                 } else {
-                    if(next==4){
-                        ans.text('Try selecting less color next time. ')
-                        save_answers(submission,0)
-
-                    } else {
-                        ans.text('Try selecting an analogous pair with a neutral next time. ')
-                        save_answers(submission,0)
-                        
-                    }
-    
+                    ans.text("Not quite!");
+                    isCorrect = false;    
                 }
-               $('#quiz-feedback').append(ans)
+                
+                $('#quiz-feedback').append(ans)
+               if (!isCorrect) {
+                showCorrectOutfit(next, ans);
+               }
+
                $('#submit').remove()
                let nextQ =  $('<a href="/quiz/'+next+'" class="btn text-font  teach_button btn-primary mx-1">')
                nextQ.text('Next Question')
                
 
                $('.quiz-buttons').append(nextQ)
-             $('.draggable').draggable( "disable" )
+             $('.draggable').draggable( "disable" ) //This is returning an error for some reason
 
             }
             

@@ -71,20 +71,24 @@
   {% else %}
   <div class="col">
     <div class="row d-block">
-      <div class="principle_num my-2 font-weight-bold accenttext-color">
+      <div class="principle_num accenttext-color">
         Question {{data.id}}:
       </div>
 
-      <div class="quiz-header principle my-2 text-color">{{data.text}}</div>
+      <div class="principle my-2 text-color">{{data.text}}</div>
     </div>
 
+    {% if next > 3 %}
+    <div class="row">
+      <div class="row quiz_outfit_box" id="color-grid">
+    {% else %}
     <div class="row">
       <div class="row" id="color-grid">
-       
+    {% endif %}
        
 
       </div>
-      {% if next>3 %}
+      {% if next>3%}
       <div class="row" id="drop-grid"></div>
       {%endif%}
      

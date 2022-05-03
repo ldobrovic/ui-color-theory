@@ -61,8 +61,11 @@ $(document).ready(function(){
             return e == 1;
         })
         if (result) {
+            $("#next_btn").removeClass("test_button");
             $("#next_btn").removeClass("btn-secondary");
-            $("#next_btn").addClass("btn-primary");
+
+            $("#next_btn").addClass("teach_button");
+            $("#next_btn").removeClass("btn-primary");
         }
     })
    

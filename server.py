@@ -43,7 +43,7 @@ lessons = [
                 "image": "/static/images/p1phoebe.png",
             },
             {
-                "description": "Although sometimes seen as a faux-pas, black and navy here create a serious, composed outfit.",
+                "description": "Although sometimes seen as a faux pas, black and navy here create a serious, composed outfit.",
                 "image": "/static/images/p1navy.png",
             },
             {
