@@ -366,13 +366,13 @@ width: 100px;
   background-color: #393a77;
   border-color:#393a77;
   margin-bottom: 10px;
-  color: white !important;
 }
 .test_button{
   /* background-color:  rgb(205, 204, 202); */
   background-color: rgb(238, 237, 235);
   color: #2e2f5e;
   margin-bottom: 10px;
+  border-color: #2e2f5e;
   /* color: rgb(241, 239, 239); */
 }
 .accenttext-color{
@@ -419,21 +419,11 @@ width: 100px;
   color: #2e2f5e !important;
 
 }
-
-.correct_outfit {
-  height: 200px;
-  width: auto;
+.bag-body{
+  border-radius: 15px 15px;
+  border: 3px solid rgb(108, 106, 106);
+  position: absolute;
 }
+.bag-handle{
 
-.bottom_marg{
-  margin-bottom: 10px;
-}
-
-.feedback_pad {
-  padding-top: 30px;
-}
-
-.quiz_outfit_box {
-  margin-top: 5px;
-  margin-bottom: 30px;
 }

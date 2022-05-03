@@ -425,7 +425,8 @@ function img_grid(images){
 
             if(isCorrect){
                 ans.removeClass('col-8').addClass('col-12').addClass('text-center')
-                ans.text('Good Job!')
+                ans.text('Good Job! Check out other analogous combinations on the colorwheel below!')
+                $('#popup-content').addClass("active").addClass('ml-4').addClass('center')
                 save_answers(submission,1)
             } else if(submission.length<1) {
                 ans.text('Please select some colors!')
