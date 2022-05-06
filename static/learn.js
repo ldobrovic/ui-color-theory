@@ -64,7 +64,7 @@ $(document).ready(function(){
             $("#next_btn").removeClass("test_button");
             $("#next_btn").removeClass("btn-secondary");
 
-            $("#next_btn").addClass("teach_button");
+            $("#next_btn").addClass("teach_button").addClass("hovered_button_color");
             $("#next_btn").removeClass("btn-primary");
         }
     })

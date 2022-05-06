@@ -220,7 +220,9 @@ function outfit_grid(images){
         },
         accept: '.bottom'
     })
-    let accessory = $('<div class="col-md-4 text-font accessory-spacing" id="accessory">')
+    let accessory = $('<div class="col-md-5 border bag text-font accessory-spacing" id="accessory">')
+    accessory.append(' <div class="bag-handle border">')
+    accessory.append(' <div class="bag-body border">')
     accessory.text('')
     
     accessory.droppable({
@@ -241,10 +243,10 @@ function outfit_grid(images){
 
     
     
-   
+    $('#drop-grid').append(accessory)
     $('#drop-grid').append(clothes)
     // $('#drop-grid').append(clothes).attr("class", "disinlineblck")
-    $('#drop-grid').append(accessory)
+  
 
  }
 
@@ -288,27 +290,26 @@ function outfit_grid(images){
         }
     }
     return 3
-  
 
- }
+}
 
- function showCorrectOutfit(next) {
+function showCorrectOutfit(next) {
 
-    if (next == 4) {
-        img_src = '/static/images/q3solution.png'
-        feedback = "An example outfit solution is found to the right. The bright, eye-catching 'parakeet green' sweater is balanced out by the more subdued neutrals of the black pants and beige tote bag."
-    } else {
-        img_src = '/static/images/q4solution.png'
-        feedback = "An example outfit solution is found to the right. This outfit features the analogous color pairing of the red hat and purple sweater, grounded by the neutral navy pants. In fact, red-purple-navy form an analogous color triple!"
-    }
+   if (next == 4) {
+       img_src = '/static/images/q3solution.png'
+       feedback = "An example outfit solution is found to the right. The bright, eye-catching 'parakeet green' sweater is balanced out by the more subdued neutrals of the black pants and beige tote bag."
+   } else {
+       img_src = '/static/images/q4solution.png'
+       feedback = "An example outfit solution is found to the right. This outfit features the analogous color pairing of the red hat and purple sweater, grounded by the neutral navy pants. In fact, red-purple-navy form an analogous color triple!"
+   }
 
-    let two = $("<div class='row'><div class='col-3'></div><div class='col-3 feedback_pad'><p>" + feedback + "</p></div><div class='col-1'><img src=" +img_src+ " class='correct_outfit' alt='example solution for this question'></img></div><div class='col-5'></div></div>")
+   let two = $("<div class='row'><div class='col-3'></div><div class='col-3 feedback_pad'><p>" + feedback + "</p></div><div class='col-1'><img src=" +img_src+ " class='correct_outfit' alt='example solution for this question'></img></div><div class='col-5'></div></div>")
 
-    $('#quiz-feedback').append(two)
-
+   $('#quiz-feedback').append(two)
 
 
-    console.log(next);
+
+   console.log(next);
 
 
  }
@@ -457,7 +458,7 @@ function img_grid(images){
         makeOutfit()
         $('#submit').click(function(e){
             $('.feedback').remove()
-            let ans = $('<div class="col-12 text-font text-color feedback bottom_marg">')
+              let ans = $('<div class="col-12 text-font text-color feedback bottom_marg">')
             isCorrect = true
             if (submission.length<2){
                 ans.text('Please make your outfit!')

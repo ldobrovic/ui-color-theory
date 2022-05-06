@@ -379,7 +379,9 @@ width: 100px;
   color: rgb(108, 106, 106) ;
   
 }
-
+.hovered_button_color{
+  color: whitesmoke;
+}
 #welcome_header {
   text-align: center;
   font-weight: bold;
@@ -420,10 +422,59 @@ width: 100px;
 
 }
 .bag-body{
-  border-radius: 15px 15px;
+  border-radius: 10px;
   border: 3px solid rgb(108, 106, 106);
   position: absolute;
+  height: 20px;
+  width: 20px;
+  display: block;
+  top:10px;
 }
 .bag-handle{
+    border-radius: 100px 100px 0 0;
+    border: 3px solid rgb(108, 106, 106);
+    transform: translate(-50%, -50%);
+    top:2px;
+}
+.bag{
+    display: block;
+    position: relative;
+    width: 100px;
+    height: 50px;
+    border:1px solid rgb(88, 86, 86)
+    
+}
+.correct_outfit {
+  height: 200px;
+  width: auto;
+}
 
+.bottom_marg{
+  margin-bottom: 10px;
+}
+
+.feedback_pad {
+  padding-top: 30px;
+}
+
+.quiz_outfit_box {
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+.correct_outfit {
+  height: 200px;
+  width: auto;
+}
+
+.bottom_marg{
+  margin-bottom: 10px;
+}
+
+.feedback_pad {
+  padding-top: 30px;
+}
+
+.quiz_outfit_box {
+  margin-top: 5px;
+  margin-bottom: 30px;
 }
