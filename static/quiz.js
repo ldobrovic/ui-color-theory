@@ -220,10 +220,16 @@ function outfit_grid(images){
         },
         accept: '.bottom'
     })
-    let accessory = $('<div class="col-md-5 border bag text-font accessory-spacing" id="accessory">')
-    accessory.append(' <div class="bag-handle border">')
-    accessory.append(' <div class="bag-body border">')
-    accessory.text('')
+    let accessory = $('<div class="col-md-5  bag text-font accessory-spacing" id="accessory">')
+    if(next==4){
+        let bag = $('<img src="/static/images/q3bag.png" width="100px"/>')
+
+        accessory.append(bag)
+    
+    }
+   
+
+    // accessory.text('')
     
     accessory.droppable({
         drop: function(event, ui){
