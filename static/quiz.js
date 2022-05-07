@@ -303,7 +303,8 @@ function showCorrectOutfit(next) {
        feedback = "An example outfit solution is found to the right. This outfit features the analogous color pairing of the red hat and purple sweater, grounded by the neutral navy pants. In fact, red-purple-navy form an analogous color triple!"
    }
 
-   let two = $("<div class='row'><div class='col-3'></div><div class='col-3 feedback_pad'><p>" + feedback + "</p></div><div class='col-1'><img src=" +img_src+ " class='correct_outfit' alt='example solution for this question'></img></div><div class='col-5'></div></div>")
+   let two = $("<div class='row'><div class='col-3'></div><div class='col-3 font-weight-bold feedback_pad'><p>" + feedback + "</p></div><div class='col-1'><img src=" +img_src+ " class='correct_outfit' alt='example solution for this question'></img></div><div class='col-5'></div></div>")
+    // let two = $("<div class='row'><div class='col-3'>" + feedback + "</div><div class='col'><img src=" +img_src+ " class='correct_outfit' alt='example solution for this question'>")
 
    $('#quiz-feedback').append(two)
 

@@ -118,12 +118,14 @@
 
           <div class="text-color row text-center" id="quiz-feedback">
             {% if next==3 %}
-            <div
-              id="feedback"
-              class="col-8 text-font text-color feedback my-3"
-            ></div>
+            <div id="feedback" class="col-8 text-font text-color feedback my-3"></div>
             <div id="wheel" class="col my-3 justify-content-center">
-              <div data-role="popup" id="popup-content" class="center">
+            
+              <div
+                data-role="popup"
+                id="popup-content"
+                class="d-inline-block"
+              >
                 <img
                   src="/static/images/p3wheel.png"
                   alt="Color Wheel"
@@ -219,11 +221,12 @@
               </div>
             </div>
             {%endif%}
+     
           </div>
         </div>
       </div>
     </div>
-
     {% endblock %}
+
   </div>
 </div>

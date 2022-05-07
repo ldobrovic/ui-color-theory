@@ -62,6 +62,9 @@ body {
 .correct-border {
   border: 5px solid rgb(13, 229, 13);
 }
+.correct_outfit {
+  max-height: 250px;
+}
 .wrong-border {
   border: 5px solid red;
 }
@@ -323,6 +326,9 @@ width: 100px;
   left: 130px;
 
 }
+area{
+  cursor:cell;
+}
 .parent {
   position: relative;
 }
@@ -366,6 +372,7 @@ width: 100px;
   background-color: #393a77;
   border-color:#393a77;
   margin-bottom: 10px;
+  color:rgb(238, 237, 235);
 }
 .test_button{
   /* background-color:  rgb(205, 204, 202); */
