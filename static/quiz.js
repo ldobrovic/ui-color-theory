@@ -442,9 +442,9 @@ function img_grid(images){
                 return
             }
             else {
-               
+                ans.removeClass('col-8').addClass('col-12').addClass('text-center')
                 ans.text('Try reviewing your colorwheel below! Possible pairings are found next to each other on the color wheel, such as blue and purple, red and orange, or yellow and green.')
-                $('#popup-content').addClass("active").addClass('ml-4')
+                $('#popup-content').addClass("active").addClass('ml-4').addClass('center')
                 ans.addClass('text-left').addClass('mr-4')
                 submitted=true
                 save_answers(submission,0)
