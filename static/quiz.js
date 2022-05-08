@@ -274,20 +274,20 @@ function outfit_grid(images){
         let pair2 = wrong_colors[1] //["navy", "purple"]
         let pair3 = wrong_colors[2] // ["red", "purple"]
 
-      // console.log(submission)
+    //   console.log(submission)
         if(submission.includes(pair1[0])&&submission.includes(pair1[1])){
-            //console.log("pair1")  
+            // console.log("pair1")  
             return 1
 
         }
 
-        else if(submission.includes(pair2[0]&&submission.includes(pair2[1]))){
-           // console.log("pair2")  
+        else if(submission.includes(pair2[0])&&submission.includes(pair2[1])){
+        //    console.log("pair2")  
            
             return 1
         }
         if(submission.includes(pair3[0])&&submission.includes(pair3[1])){
-            //console.log("pair3")  
+            // console.log("pair3")  
           
             return 1
         }
@@ -349,7 +349,7 @@ function img_grid(images){
         'overall': value,
         'answers': submission,
     }
-
+    console.log("saving answer--->", item)
     $.ajax({
         type: "POST",
         url: "save_answers",
@@ -357,8 +357,8 @@ function img_grid(images){
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify(item),
         success: function(result){
-            // console.log('answers saved')
-            // console.log(result["user_answers"])
+            console.log('answers saved')
+            console.log(result["user_answers"])
         },
         error: function(request,status, error){
             console.log("Error")
@@ -472,7 +472,7 @@ function img_grid(images){
              //console.log(colors)
                 if(colors==0){
                     ans.text("Good Job! Don't be afraid to use color next time!")
-                save_answers(submission,1)
+                   save_answers(submission,1)
                    
                 } else if (colors<2){
                     ans.text('Good Job!')
@@ -480,7 +480,9 @@ function img_grid(images){
     
                 } else {
                     ans.text("Not quite!");
-                    isCorrect = false;    
+                    isCorrect = false;
+                    save_answers(submission,0)
+
                 }
                 
                 $('#quiz-feedback').append(ans)
