@@ -399,14 +399,14 @@ function img_grid(images){
             let correct = showCorrectGrid()
             let ans = $('<div class="col-12 text-font text-color feedback">')
             if(checkColorAnswers()){
-                ans.text('Good Job! You got all correct.')
+                ans.text('Good Job! You found all of the neutrals.')
                 save_answers(submission,1)
             } else if(correct>0){
                 let diff = submission.length-correct
-                ans.text('Nice Try! You got '+correct+' correct and '+diff+' wrong. There are 4 neutrals displayed in total. Right answers are in green!')
+                ans.text('Nice Try! You got '+correct+' correct and '+diff+' wrong. There are 4 neutrals displayed in total: black, grey, beige, and navy.')
                 save_answers(submission,0)
             } else {
-                ans.text('Try selecting some color blocks next time! You got '+correct+' correct. Right answers are in green!')
+                ans.text('You got '+correct+' correct. Try reviewing the principles of color theory! There are 4 neutrals displayed in total: black, grey, beige, and navy.')
                 save_answers(submission,0)
 
             }
@@ -440,7 +440,7 @@ function img_grid(images){
             }
             else {
                 ans.removeClass('col-8').addClass('col-12').addClass('text-center')
-                ans.text('Try reviewing your colorwheel below! Possible pairings are found next to each other on the color wheel, such as blue and purple, red and orange, or yellow and green.')
+                ans.text('Try reviewing the colorwheel below! Possible pairings are found next to each other on the color wheel, such as blue and purple, red and orange, or yellow and green.')
                 $('#popup-content').addClass("active").addClass('ml-4').addClass('center')
                 ans.addClass('text-left').addClass('mr-4')
                 submitted=true
