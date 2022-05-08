@@ -222,7 +222,7 @@ questions = [
         "id": "4",
         "text": "Build an outfit with one neutral and an analogous color pair",
         "answer":[
-            ["red","orange"],
+            ["red","orange",],
             ["navy", "purple"],
             ["red", "purple"]
         ],
