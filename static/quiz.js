@@ -197,7 +197,7 @@ function outfit_grid(images){
             // top.append(' <div class="rightarm">')
             top.append(drag).attr("class", "topp")
             if(!submission.includes(drag.attr('alt'))){
-                submission[0]=drag.attr('alt');
+                submission[1]=drag.attr('alt');
             } 
         },
         accept: '.top'
@@ -215,7 +215,7 @@ function outfit_grid(images){
            
             bottom.append(drag).attr("class", "pants")
             if(!submission.includes(drag.attr('alt'))){
-                submission[1]=drag.attr('alt');
+                submission[2]=drag.attr('alt');
             } 
         },
         accept: '.bottom'
@@ -267,32 +267,27 @@ function outfit_grid(images){
          
            return count
     }  else {
-        let pair1 = wrong_colors[0]
-        let pair2 = wrong_colors[1]
-        let pair3 = wrong_colors[2]
+        
+        let pair1 = wrong_colors[0] //["red","orange",]
+        let pair2 = wrong_colors[1] //["navy", "purple"]
+        let pair3 = wrong_colors[2] // ["red", "purple"]
 
-       
-        if(submission.includes(pair1[0])){
-            if(submission.includes(pair1[1])){
-                if(!(submission.includes(pair2[1])||submission.includes(pair2[0]))){
-                    return 1
-                }
-            } 
+       console.log(submission)
+        if(submission.includes(pair1[0])&&submission.includes(pair1[1])){
+            console.log("pair1")  
+            return 1
+
         }
 
-        if(submission.includes(pair2[0])){
-            if(submission.includes(pair2[1])){
-                if(!(submission.includes(pair1[1])||submission.includes(pair1[0]))){
-                    return 1
-                }
-            }
+        else if(submission.includes(pair2[0]&&submission.includes(pair2[1]))){
+            console.log("pair2")  
+           
+            return 1
         }
-        if(submission.includes(pair3[0])){
-            if(submission.includes(pair3[1])){
-                if(!(submission.includes(pair1[1])||submission.includes(pair2[0]))){
-                    return 1
-                }
-            } 
+        if(submission.includes(pair3[0])&&submission.includes(pair3[1])){
+            console.log("pair3")  
+          
+            return 1
         }
     }
     return 3
@@ -405,8 +400,8 @@ function img_grid(images){
                 ans.text('Good Job! You got all correct.')
                 save_answers(submission,1)
             } else if(correct>0){
-                
-                ans.text('Nice Try! You got '+correct+' correct. Right answers are in green!')
+                let diff = submission.length-correct
+                ans.text('Nice Try! You got '+correct+' correct and '+diff+' wrong. Right answers are in green!')
                 save_answers(submission,0)
             } else {
                 ans.text('Try selecting some color blocks next time! You got '+correct+' correct. Right answers are in green!')
