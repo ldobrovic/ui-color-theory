@@ -181,10 +181,7 @@ function outfit_grid(images){
             if(!submission.includes(drag.attr('alt'))){
                 submission[0]=drag.attr('alt');
             } 
-            //console.log(submission)
-
         },
-
         accept: '.hat'
     })
     top.droppable({
@@ -202,8 +199,6 @@ function outfit_grid(images){
             if(!submission.includes(drag.attr('alt'))){
                 submission[1]=drag.attr('alt');
             } 
-            //console.log(submission)
-
         },
         accept: '.top'
     })
@@ -217,14 +212,11 @@ function outfit_grid(images){
             outfit_grid(data.images)
             drag.removeAttr("style");
             bottom.text("")
-
-            //console.log(drag.attr('alt'))
+           
             bottom.append(drag).attr("class", "pants")
             if(!submission.includes(drag.attr('alt'))){
                 submission[2]=drag.attr('alt');
             } 
-            //console.log(submission)
-
         },
         accept: '.bottom'
     })
@@ -266,7 +258,7 @@ function outfit_grid(images){
 
  function checkOutfit(wrong_colors,next){
     let count=0
-    //console.log(submission)
+  //console.log(submission)
     if(next==4){
         for(let i = 0;i<wrong_colors.length; ++i){
             if(submission.includes(wrong_colors[i])){
@@ -282,21 +274,20 @@ function outfit_grid(images){
         let pair2 = wrong_colors[1] //["navy", "purple"]
         let pair3 = wrong_colors[2] // ["red", "purple"]
 
-    //    console.log(submission)
-    //    console.log(pair2)
+      // console.log(submission)
         if(submission.includes(pair1[0])&&submission.includes(pair1[1])){
-            // console.log("pair1")  
+            //console.log("pair1")  
             return 1
 
         }
 
-        else if(submission.includes(pair2[0])&&submission.includes(pair2[1])){
-            // console.log("pair2")  
+        else if(submission.includes(pair2[0]&&submission.includes(pair2[1]))){
+           // console.log("pair2")  
            
             return 1
         }
         if(submission.includes(pair3[0])&&submission.includes(pair3[1])){
-            // console.log("pair3")  
+            //console.log("pair3")  
           
             return 1
         }
@@ -412,7 +403,7 @@ function img_grid(images){
                 save_answers(submission,1)
             } else if(correct>0){
                 let diff = submission.length-correct
-                ans.text('Nice Try! You got '+correct+' correct and '+diff+' wrong. Right answers are in green!')
+                ans.text('Nice Try! You got '+correct+' correct and '+diff+' wrong. There are 4 neutrals displayed in total. Right answers are in green!')
                 save_answers(submission,0)
             } else {
                 ans.text('Try selecting some color blocks next time! You got '+correct+' correct. Right answers are in green!')
@@ -478,7 +469,7 @@ function img_grid(images){
                 $('#quiz-feedback').append(ans)
             } else {
                 let colors = checkOutfit(data.answer,next)
-                //console.log(colors)
+             //console.log(colors)
                 if(colors==0){
                     ans.text("Good Job! Don't be afraid to use color next time!")
                 save_answers(submission,1)
